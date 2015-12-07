@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="requestaction.aspx.cs" Inherits="SuperSite.admin.ajax.requestaction" %>

@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script type="text/javascript">
+/*ajax执行*/
+var lang = 'cn';
+var metimgurl='statics/base/images/';
+var depth='../';
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+<!--[if lte IE 9]>
+<SCRIPT language=JavaScript>  
+function killErrors() {  
+return true;  
+}  
+window.onerror = killErrors;  
+</SCRIPT> 
+<![endif]-->
+
+<title>添加会员</title>
+</head>
+<body>
+<script type="text/javascript">
+function array_submit(my,form){
+	var title=$('#title').val();
+	
+	if(!title){
+		alert('会员组名称不能为空');
+		return false;
+	}
+	
+	return Smit(my,form);
+}
+</script>
+
+<script type="text/javascript">
+function metreturn(url){
+	if(url){
+		location.href=url;
+	}else if($.browser.msie){
+		history.go(-1);
+	}else{
+		history.go(-1);
+	}
+}
+</script>
+	<div class="metinfotop">
+
+	<div class="position">简体中文 > 企业应用 > <a href="user_group.html">会员组设置</a> > 修改会员组</div>
+
+
+	<div class="return"><a href="javascript:metreturn('');">&lt;&lt;返回</a></div>
+
+	</div>
+	<div class="clear"></div>
+
+<script type="text/javascript">
+$("html",parent.document).find('.returnover').remove();
+</script>
+
+
+</div>
+
+<div class="stat_list">
+	<ul>
+		<li ><a href="user.html" title="会员管理">会员管理</a></li>
+		<li class="now"><a href="user_group.html" title="会员组设置">会员组设置</a></li>
+		<li ><a href="group_config.html" title="会员功能设置">会员功能设置</a></li>
+	</ul>
+</div>
+<div style="clear:both;"></div>
+
+<form method="POST" name="myform" id="myform" action="index.php/admin/user_group/add" target="_self">
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+<div class="v52fmbx">	
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>会员组名称：</dt>
+			<dd>
+				<input name="title" type="text" id="title" class="text nonull" value="">
+			</dd>
+		</dl>
+		</div>
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>优惠百分比：</dt>
+			<dd>
+				<input name="rate" type="text" class="text nonull" value="">
+				<span class="tips">消费时的折扣。</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>所需积分：</dt>
+			<dd>
+				<input name="point" type="text" class="text nonull" value="">
+				<span class="tips">升级至本级别所需要的最低积分。</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>权限设置：</dt>
+			<dd>
+				<input name="allowupgrade" type="checkbox" class="checkbox" value="1" >允许自动升级&nbsp;&nbsp;&nbsp;
+				<input name="allowlogin" type="checkbox" class="checkbox" value="1" >允许登录&nbsp;&nbsp;&nbsp;
+				<input name="allowpost" type="checkbox" class="checkbox" value="1" >允许投稿&nbsp;&nbsp;&nbsp;
+				<input name="allowpostverify" type="checkbox" class="checkbox" value="1" >投稿无需审核&nbsp;&nbsp;&nbsp;
+				<input name="allowattachment" type="checkbox" class="checkbox" value="1" >允许上传附件&nbsp;&nbsp;&nbsp;
+				<span class="tips">消费时的折扣。</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>每日最大投稿数：</dt>
+			<dd>
+				<input name="allowpostnum" type="text" class="text mid" size="10" value="0">
+				<span class="tips">为0时不限制，前提：必须允许投稿</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>是否为默认组：</dt>
+			<dd>
+				<input name="isdefault" type="checkbox" class="checkbox" value="1" >是
+				<span class="tips">会员注册成功后默认加入此会员组</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox v52fmbx_mo">
+		<dl>
+			<dt></dt>
+			<dd>
+				<input type="submit" name="submit" id="passsubmit" value="保存" class="submit" onclick="return array_submit($(this),'myform')" />
+			</dd>
+		</dl>
+		</div>
+		
+		
+</div>
+</div>
+</div>
+</form>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.1030 seconds </div>
+</body>
+</html>
+

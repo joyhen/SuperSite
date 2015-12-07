@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--URL分隔符-->
+  <item name="UrlSplit" value ="-" />
+  <!--网站名称-->
+  <item name="SiteName" value ="超级网站管理系统" />
+  <!--网站标题-->
+  <item name="SiteTitle" value ="Super Site | 超级网站管理系统,最适合企业的cms（内容管理系统）" />
+  <!--网站关键词-->
+  <item name="SiteKeywords" value ="Super Site,cms系统,企业网站管理系统,内容管理系统,建站系统,cms" />
+  <!--网站描述-->
+  <item name="SiteDescription" value ="Super Site,采用ASP.NET+SqlServer架构，是一款对SEO非常友好、功能全面、安全稳定、支持多终端展示并且使用起来极其简单的企业建站系统。" />
+</config>

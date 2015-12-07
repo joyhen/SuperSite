@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <p>fdsfdsafdf</p>
+    <script src="../statics/base/js/jQuery1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).keydown(function (e) {
+                if (e.which === 27) {
+                    $('#out').trigger('click');
+                } else if (window.event.keyCode == 113) { //F2
+                    parent.shownavigationpanel();
+                }
+            });
+
+            var index = parent.layer.getFrameIndex(window.name);
+
+
+            //...
+
+        });
+    </script>
+</body>
+</html>

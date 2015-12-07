@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <login>
+    <item id="des" zhcn="打造具有营销价值的企业网站" zhtw="打造具有行銷價值的企業網站" en="Build super of the enterprise website" type="p" />
+    <item id="username" zhcn="用户名" zhtw="用戶名" en="account" type="label" />
+    <item id="pwd" zhcn="密　码" zhtw="密　碼" en="password" type="label" />
+    <item id="vcode" zhcn="验证码" zhtw="驗證碼" en="validate code" type="label" />
+  </login>
+
+  <index>
+
+  </index>
+
+</config>

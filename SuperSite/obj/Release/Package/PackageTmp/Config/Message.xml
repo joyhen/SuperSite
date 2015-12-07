@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <commontip>
+    <item name="DefaultError" zhcn="内部错误" zhtw="內部錯誤" en="system internal error" />
+    
+  </commontip>
+
+  <logintip>
+    <item name="NameOrPassworldNull" zhcn="用户名或密码为空" zhtw="用戶名或密碼為空" en="login account or password is empty" />
+    <item name="ValidateError" zhcn="验证码错误" zhtw="驗證碼錯誤" en="validate code isn't correct" />
+    <item name="UserNameNotMatchUserPwd" zhcn="用户名或密码错误错误" zhtw="用戶名或密碼錯誤錯誤" en="account and password does not match" />
+    <item name="LoginError" zhcn="登录失败" zhtw="登入失敗" en="login error" />
+    <item name="LoginQuestionFail" zhcn="登录口令校验失败" zhtw="登錄口令校驗失敗" en="login question's answer is'nt correct" />
+  </logintip>
+
+</config>

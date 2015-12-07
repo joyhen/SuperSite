@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>设置系统当前语言</title>
+    <link href="../statics/base/css/common.css" rel="stylesheet" />
+    <link href="../statics/base/css/metinfo.css" rel="stylesheet" />
+    <style type="text/css">
+        #myform {
+            min-height: 145px;
+        }
+
+            #myform ul {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+                #myform ul li {
+                    width: 30%;
+                    float: left;
+                    cursor: pointer;
+                    text-align: center;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-bottom: 10px;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    color: #999;
+                    background-color: #fff;
+                    border: 1px solid #aaaaaa;
+                    border-radius: 3px;
+                    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+                }
+
+                    #myform ul li.liselectlang {
+                        color: #000;
+                        border: 1px solid #0094ff;
+                        background: url('../statics/base/images/iconfont/iconfont-check.png') #e5f5ff 140px center no-repeat;
+                    }
+
+        .btnlistcontaint {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="myform" class="box mt10">
+            <ul>
+                <li achieve="ok" ccvalue="zhcn">中文简体</li>
+                <li achieve="ok" ccvalue="zhtw">中文繁体</li>
+                <li achieve="ok" ccvalue="en">英文</li>
+                <li achieve="no" ccvalue="jp">日语</li>
+                <li achieve="no" ccvalue="kor">韩语</li>
+                <li achieve="no" ccvalue="ru">俄语</li>
+                <li achieve="no" ccvalue="de">德语</li>
+                <li achieve="no" ccvalue="fra">法语</li>
+                <li achieve="no" ccvalue="ara">阿拉伯语</li>
+            </ul>
+        </div>
+    </div>
+    <br style="clear:both;" />
+    <div class="box btnlistcontaint">
+        <input type="button" id="btnselect" class="submit" value="选择">&nbsp;&nbsp;
+        <input type="button" id="btnreset" class="submit" value="重置">
+    </div>
+
+    <script src="../statics/base/js/jquery1.7.2.js"></script>
+    <script src="../statics/lib/parseUri.1.2.2.js"></script>
+    <script type="text/javascript">
+        var myurl = parseUri(location.href);
+        var lang = myurl.queryKey.clang;
+        var index = parent.layer.getFrameIndex(window.name);
+
+        function setCurrentLang() {
+            if (lang != undefined) {
+                $("li[ccvalue='" + lang + "']").addClass('liselectlang');
+            }
+        };
+
+        $(function () {
+
+            setCurrentLang();
+
+            $('#myform').delegate('li', 'click', function () {
+                if ($(this).attr('achieve') == 'ok') {
+                    $(this).addClass('liselectlang').siblings().removeClass('liselectlang');
+                } else {
+                    parent.layer.msg('此语言尚未支持!');
+                }
+            });
+
+            $('#btnselect').on('click', function () {
+                var _li = $('li.liselectlang');
+                if (_li.length == 0) {
+                    parent.layer.msg('请选择您要设定的语言');
+                    return;
+                }
+
+                var paramdata = {
+                    action: "9bedfffa714ae1a694b8e2fb5eec5498",
+                    arg: { lang: _li.attr('ccvalue') }
+                };
+
+                parent.doAjaxPost(paramdata, function (result) {
+                    if (result.success) {
+                        parent.location.reload(true);
+                        parent.layer.close(index);
+                    } else {
+                        parent.layer.msg(result.msg);
+                    }
+                });
+            });
+
+            $('#btnreset').on('click', function () {
+                $('li').removeClass('liselectlang');
+                setCurrentLang();
+            });
+
+            //...
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+F:\study\SuperSite\Server\bin\Release\Server.dll
+F:\study\SuperSite\Server\bin\Release\Server.pdb
+F:\study\SuperSite\Server\bin\Release\Common.dll
+F:\study\SuperSite\Server\bin\Release\Config.dll
+F:\study\SuperSite\Server\bin\Release\Model.dll
+F:\study\SuperSite\Server\bin\Release\Tools.dll
+F:\study\SuperSite\Server\bin\Release\Dapper.dll
+F:\study\SuperSite\Server\bin\Release\Dapper.Contrib.dll
+F:\study\SuperSite\Server\bin\Release\Newtonsoft.Json.dll
+F:\study\SuperSite\Server\bin\Release\Dapper.ContribPart.dll
+F:\study\SuperSite\Server\bin\Release\Common.pdb
+F:\study\SuperSite\Server\bin\Release\Config.pdb
+F:\study\SuperSite\Server\bin\Release\Model.pdb
+F:\study\SuperSite\Server\bin\Release\Tools.pdb
+F:\study\SuperSite\Server\obj\Release\Server.csprojResolveAssemblyReference.cache
+F:\study\SuperSite\Server\obj\Release\Server.dll
+F:\study\SuperSite\Server\obj\Release\Server.pdb

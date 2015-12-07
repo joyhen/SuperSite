@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>后台登录 -企业网站管理系统</title>
+    <meta content="企业网站管理系统后台登录" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+    <style>
+        html, body {
+            background: #fbfbfb;
+        }
+
+        #code.vcode {
+            width: 85px;
+        }
+        .login-min {
+            padding:0;
+        }
+        .tipmsg {
+            width:330px;
+            margin: 0px auto 0px;
+            padding-left:270px;
+            color:#ff0000;
+        }
+    </style>
+</head>
+<body id="login">
+    <div class="tipmsg">&nbsp;</div>
+    <div class="login-min">
+        <div class="login-left">
+            <div style=" border-right:1px solid #fff; padding:0px 0px 20px;">
+                <a href="http://www.id124.com" style="font-size:0px;" target="_blank" title="phpci" class="img">
+                    <img src="statics/base/images/login-logo.jpg" alt="phpci" title="phpci" />
+                </a>
+                <p>打造具有营销价值的企业网站</p>
+                <!--<p>
+                    <a href="index.php/admin/api_login/qq_login">
+                        <img src="statics/base/images/login.gif" title="一键登录后台" />
+                    </a>
+                </p>-->
+            </div>
+        </div>
+        <div class="login-right">
+            <!--<h1 class="login-title">管理员登录</h1>-->
+            <h1 class="login-title"></h1>
+            <div>
+                <form>
+                    <p><label>用户名</label><input type="text" class="text" name="user" value="" autocomplete="off" validate="用户名不能为空" /></p>
+                    <p><label>密　码</label><input type="password" class="text" name="pwd" validate="密码不能为空" /></p>
+                    <p class="login-code">
+                        <label>验证码</label>
+                        <input name="code" type="text" class="text vcode" id="code" maxlength="4" autocomplete="off" validate="验证码不能为空" />
+                        <img id="imgcode" align="absbottom" src="control/validatecode.ashx" style="cursor: pointer;" title="点击刷新验证码" />
+                    </p>
+                    <p class="login-submit">
+                        <input type="button" name="btnlogin" id="btnlogin" value="登录" />
+                        <!--<a href="#">忘记密码?</a>-->
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="footer" style="margin-top:400px; display:block!important;">Powered by <b><a href="http://www.id124.com" target="_blank">艾德创意工作室 </a></b> &copy;2015-2016 &nbsp;<a href="http://www.id124.com" target="_blank">id124.com</a></div>
+    <!--[if IE 6]>
+    <script src="images/js/IE6-png.js" type="text/javascript"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('.bg,img');</script>
+    <![endif]-->
+    <script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+    <script type="text/javascript" src="statics/base/js/lang/message-lang-en.js"></script>
+    <script type="text/javascript" src="statics/base/js/common.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#imgcode').click(function () {
+                var dt = new Date().getTime();
+                $(this).attr('src', 'control/validatecode.ashx?p=' + dt);
+            });
+
+            $('#btnlogin').click(function () {
+                if (inputcheck()) {
+                    location.href = 'index.html';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

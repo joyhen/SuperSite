@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <login>
+    <item id="des" zhcn="打造具有营销价值的企业网站" zhtw="打造具有行銷價值的企業網站" en="Build super of the enterprise website" type="p" />
+    <item id="username" zhcn="用户名" zhtw="用戶名" en="account" type="label" />
+    <item id="pwd" zhcn="密　码" zhtw="密　碼" en="password" type="label" />
+    <item id="vcode" zhcn="验证码" zhtw="驗證碼" en="validate code" type="label" />
+  </login>
+
+  <index>
+    <!--top-->
+    <item id="navigation" zhcn="快捷导航" zhtw="快捷導航" en="Navigation" type="p" />
+    <item id="message" zhcn="消息管理" zhtw="消息管理" en="Message" type="p" />
+    <item id="plugin" zhcn="插件设置" zhtw="挿件設定" en="Plugin" type="p" />
+    <item id="statistics" zhcn="推送统计" zhtw="推送統計" en="Statistics" type="p" />
+    <item id="setting" zhcn="推送配置" zhtw="推送配寘" en="Setting" type="p" />
+    
+    <item id="hello" zhcn="您好" zhtw="您好" en="Hello" />
+    <item id="quite" zhcn="退出" zhtw="退出" en="Sign out" />
+    <item id="narrow" zhcn="窄版" zhtw="窄版" en="Narrow" />
+    <item id="lang" zhcn="语言" zhtw="語言" en="Language" />
+    <item id="ccache" zhcn="清理缓存" zhtw="清理緩存" en="Clean Cache" />
+    <item id="bindqq" zhcn="绑定QQ" zhtw="綁定QQ" en="Binding QQ" />
+
+    <!--left-->
+    <item id="idxhomepage" zhcn="网站首页" zhtw="網站首頁" en="Home Page" />
+    <item id="idxsysinfo" zhcn="系统信息" zhtw="系統資訊" en="System Info" />
+    <item id="idxnoticetype" zhcn="通知类型" zhtw="通知類型" en="Notice Type" />
+    <item id="idxcolumn" zhcn="通知记录" zhtw="通知記錄" en="Notice Record" />
+    
+    <!--bottom-->
+    
+    
+  </index>
+
+</config>

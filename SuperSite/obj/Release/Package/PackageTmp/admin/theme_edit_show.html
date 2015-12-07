@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script type="text/javascript">
+/*ajax执行*/
+var lang = 'cn';
+var metimgurl='statics/base/images/';
+var depth='';
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+<!--[if lte IE 9]>
+<SCRIPT language=JavaScript>  
+function killErrors() {  
+return true;  
+}  
+window.onerror = killErrors;  
+</SCRIPT> 
+<![endif]-->
+
+</head>
+<body>
+
+<script type="text/javascript">
+function metreturn(url){
+	if(url){
+		location.href=url;
+	}else if($.browser.msie){
+		history.go(-1);
+	}else{
+		history.go(-1);
+	}
+}
+</script>
+	<div class="metinfotop">
+
+	<div class="position">简体中文 > 网站设置 > <a href="index.php/admin/theme">模板管理</a></div>
+
+    <div class="return"><a href="javascript:;" onClick="location.href='javascript:history.go(-1)'">&lt;&lt;返回</a></div>
+	</div>
+	<div class="clear"></div>
+
+</div>
+
+<div class="clear"></div>
+
+<div class="v52fmbx_tbmax v52fmbx_tbmaxmt">
+<div class="v52fmbx_tbbox">
+<form method="post" name="myform" action="index.php/admin/theme/edit?dir=./data/themes/cn/foot.php" >
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+<div class="v52fmbx">
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>文件路径：</dt>
+			<dd>./data/themes/cn/foot.php</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>文件内容：</dt>
+			<dd>
+				<textarea name="info" rows="30" style="overflow:auto;width:96%;">&lt;?php if(!defined('BASEPATH')) exit('No direct script access allowed');?&gt;
+&lt;!--bof Footer--&gt;
+&lt;div class=&quot;Footer&quot;&gt;
+	&lt;div class=&quot;wrap&quot;&gt;
+    	&lt;div class=&quot;f_1&quot;&gt;
+        	&lt;h4&gt;视界互动&lt;/h4&gt;
+            &lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;通用界面设计习作&quot; target=&quot;_blank&quot;&gt;通用界面设计习作&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;网站建设论坛的几个技巧&quot; target=&quot;_blank&quot;&gt;网站建设论坛的几个技巧&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;网络营销有哪些形式?&quot; target=&quot;_blank&quot;&gt;网络营销有哪些形式?&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f_2&quot;&gt;
+           &lt;h5&gt;标签&lt;/h5&gt;
+            &lt;div id=&quot;wpcumuluswidgetcontent9290225&quot; style=&quot;height:106px; margin-top:-10px;&quot;&gt;
+  &lt;p &gt;
+  &lt;?php 
+  foreach(db_select(TAGS,'(1=1) order by hits desc limit 0,25') as $arr=&gt;$row){?&gt;
+  &lt;a href=&quot;&lt;?=web_url('tags'.F.$row['title'])?&gt;&quot; style=&quot;font-size:12px;&quot;&gt;&lt;?=$row['title']?&gt;&lt;/a&gt;
+  &lt;?php }?&gt;
+  &lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;script &quot;type=text/javascript&quot;&gt;
+  var kk =&quot;&lt;?php foreach(db_select(TAGS,'(1=1) order by hits desc limit 0,25') as $arr=&gt;$row){?&gt;&lt;a href='#' style='12'&gt;&lt;?=$row['title']?&gt;&lt;/a&gt;&lt;?php }?&gt;&quot;;
+//alert(kk);
+  var widget_so6341666 = new SWFObject(&quot;&lt;?=theme_url()?&gt;/flash/tagcloud.swf?r=7553157&quot;, &quot;tagcloudflash&quot;, &quot;220&quot;, &quot;145&quot;, &quot;9&quot;, &quot;#ffffff&quot;);widget_so6341666.addParam(&quot;wmode&quot;, &quot;transparent&quot;);widget_so6341666.addParam(&quot;allowScriptAccess&quot;, &quot;always&quot;);widget_so6341666.addVariable(&quot;tcolor&quot;, &quot;0xFFFFFF&quot;);widget_so6341666.addVariable(&quot;tcolor2&quot;, &quot;0xFFFFFF&quot;);widget_so6341666.addVariable(&quot;hicolor&quot;, &quot;0x999999&quot;);widget_so6341666.addVariable(&quot;tspeed&quot;, &quot;150&quot;);widget_so6341666.addVariable(&quot;distr&quot;, &quot;true&quot;);widget_so6341666.addVariable(&quot;mode&quot;, &quot;tags&quot;);widget_so6341666.addVariable(&quot;tagcloud&quot;, &quot;&lt;tags&gt;&quot;+encodeURIComponent(kk)+&quot;&lt;/tags&gt;&quot;);widget_so6341666.write(&quot;wpcumuluswidgetcontent9290225&quot;);&lt;/script&gt;
+        
+        &lt;/div&gt;
+        &lt;div class=&quot;f_3&quot;&gt;
+        	&lt;h4&gt;快速联系&lt;/h4&gt;
+            &lt;ul&gt;
+                &lt;li&gt;+13616216627&lt;/li&gt;
+                &lt;li&gt;QQ:&lt;A class=qq3  href=&quot;http://wpa.qq.com/msgrd?V=1&amp;amp;Uin=357058607&amp;amp;Site=南京网站建设|南京SEO|南京网络公司-视界互动传媒&amp;amp;Menu=yes&quot; 
+  target=&quot;_blank&quot; style=&quot;color:#fff;&quot;&gt;357058607&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;7*24小时业务咨询&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f_4&quot;&gt;
+        	&lt;h4&gt;合作伙伴&lt;/h4&gt;
+            &lt;p&gt;
+			        &lt;?php foreach(db_select(LINK,'(type=1) order by ordnum') as $arr=&gt;$row){?&gt;
+					&lt;a href=&quot;&lt;?=$row['url']?&gt;&quot;&gt;&lt;?=$row['title']?&gt;&lt;/a&gt;    |    
+					&lt;?php }?&gt;
+				&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;copy&quot;&gt;&lt;span style=&quot;font-family:Verdana, Geneva, sans-serif;&quot;&gt;&amp;copy;&lt;/span&gt;2010 &lt;span style=&quot;color:#7D7A7A&quot;&gt;视界互动&lt;/span&gt; All Right Reserved   
+	&lt;a href=&quot;&lt;?=web_url('sitemap')?&gt;&quot; title=&quot;网站地图&quot;&gt;SiteMap&lt;/a&gt;  |  
+	&lt;a href=&quot;&lt;?=web_url('contact')?&gt;&quot; title=&quot;联系我们&quot;&gt;Contact&lt;/a&gt;  | 
+	&lt;h1&gt;&lt;a title=&quot;南京网络公司&quot; href=&quot;&lt;?=base_url()?&gt;&quot;&gt;视界互动&lt;/a&gt;&lt;/h1&gt;-
+	&lt;h1&gt;&lt;a href=&quot;&lt;?=base_url()?&gt;&quot; title=&quot;南京网站建设&quot;&gt;网站建设&lt;/a&gt;&lt;/h1&gt;,
+	&lt;h1&gt;&lt;a href=&quot;&lt;?=base_url()?&gt;&quot; title=&quot;南京网站制作&quot;&gt;网站制作&lt;/a&gt;&lt;/h1&gt;,
+	致力企业品牌形象塑造，提升品牌竞争力！Processed in 0.1349 seconds
+&lt;/div&gt;
+&lt;!--eof Footer--&gt;
+&lt;script src='&lt;?=web_url('plug/stats')?&gt;?type=para' type='text/javascript'&gt;&lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+var online_url=&quot;&lt;?=web_url('plug/online')?&gt;&quot;;
+var online_css=&quot;&lt;?=base_url()?&gt;statics/base/css/online.css&quot;;
+&lt;/script&gt;
+&lt;script src='&lt;?=base_url()?&gt;statics/base/js/online.js?t=&lt;?=ONLINE_TYPE?&gt;&amp;u=&amp;x=&lt;?=ONLINE_LEFT_LEFT?&gt;&amp;y=&lt;?=ONLINE_LEFT_TOP?&gt;&amp;lang=cn' type='text/javascript' id='metonlie_js'&gt;&lt;/script&gt;
+</textarea>
+			</dd>
+		</dl>
+		</div>
+		<div class="v52fmbx_dlbox v52fmbx_mo">
+		<dl>
+			<dt></dt>
+			<dd>
+				<input type="submit" value="保存" class="submit" onclick="return Smit($(this),'myform')" />
+			</dd>
+		</dl>
+		</div>
+		
+</div>
+</div>
+</div>      
+
+</form>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.1349 seconds </div>
+</body>
+</html>

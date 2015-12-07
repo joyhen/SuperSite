@@ -1,0 +1,15 @@
+﻿class Base { }
+interface IBase<out T> where T : Base, new()
+{
+    void SomeMethod();
+}
+class Derived : Base //直接继承基类
+{
+
+}
+class Implementation : IBase<Derived>
+{
+    public void SomeMethod()
+    {
+    }
+}

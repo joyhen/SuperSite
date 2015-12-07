@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--系统状态，0关闭，1正常-->
+  <item name="SiteStatic" value ="1" />
+  <!--7天内保持登录-->
+  <item name="LoginKeep7" value ="1" />
+  <!--是否启用伪静态-->
+  <item name="PseudoStatic" value="1" />
+  <!--登录验证码功能打开-->
+  <item name="LoginValidate" value ="0" />
+  <!--登录口令校验功能打开-->
+  <item name="LoginQustion" value ="0" />
+  <!--支持多语言-->
+  <item name="MultiLanguage" value ="1" />
+  <!--显示主面板宽窄切换按钮-->
+  <item name="ShowFullOrNarrowButton" value ="1" />
+  <!--允许QQ登录-->
+  <item name="AllowQQLogin" value ="1" />
+  <!--文件缓存-->
+  <item name="FileCache" value ="1" />
+  <!--文件缓存时间-->
+  <item name="FileCacheTime" value ="1440" />
+  
+</config>

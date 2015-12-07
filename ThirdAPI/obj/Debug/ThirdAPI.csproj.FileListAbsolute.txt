@@ -1,0 +1,9 @@
+F:\study\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.dll
+F:\study\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.pdb
+F:\study\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.csprojResolveAssemblyReference.cache
+F:\study\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.dll
+F:\study\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.pdb
+F:\business\JonOpen\ThirdAPI\bin\Debug\ThirdAPI.dll
+F:\business\JonOpen\ThirdAPI\bin\Debug\ThirdAPI.pdb
+F:\business\JonOpen\ThirdAPI\obj\Debug\ThirdAPI.dll
+F:\business\JonOpen\ThirdAPI\obj\Debug\ThirdAPI.pdb

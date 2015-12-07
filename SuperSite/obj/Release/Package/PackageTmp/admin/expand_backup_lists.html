@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>数据备份</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css?5202" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script type="text/javascript">
+/*ajax执行*/
+var lang = 'cn';
+var metimgurl='statics/base/images/';
+var depth='';
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+<!--[if lte IE 9]>
+<SCRIPT language=JavaScript>  
+function killErrors() {  
+return true;  
+}  
+window.onerror = killErrors;  
+</SCRIPT> 
+<![endif]-->
+
+</head>
+<body>
+
+<script type="text/javascript">
+function metreturn(url){
+	if(url){
+		location.href=url;
+	}else if($.browser.msie){
+		history.go(-1);
+	}else{
+		history.go(-1);
+	}
+}
+</script>
+	<div class="metinfotop">
+	<div class="position">简体中文 > 网站设置 > <a href="expand_backup.html">数据备份</a> > 备份</div>
+	<div class="return"><a href="javascript:;" onClick="location.href='javascript:history.go(-1)'">&lt;&lt;返回</a></div>
+	</div>
+	<div class="stat_list">
+	<ul>
+		<li class="now"><a href="expand_backup.html" title="备份">备份</a></li>
+		<li ><a href="expand_backup_recovery.html" title="恢复">恢复</a></li>
+	</ul>
+</div>
+	<div class="clear"></div>
+	
+</div>
+
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+		
+<div class="clear"></div>
+	
+	<table cellpadding="2" cellspacing="1" class="table">
+		
+              <tr id="list-top">
+                <td width="30" class="list">选择</td>
+                <td width="60" class="list">记录条数</td>
+                <td width="60" class="list" >大小</td>
+				<td width="300" class="list list_left" >数据表</td>
+              </tr>
+			  <form name="myform" method="post" id="myform" action="index.php/admin/expand_backup/add">
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_admin' />
+				</td>
+			    <td class="list-text ">2</td>
+                <td class="list-text ">240</td>
+				<td class="list-text alignleft">ci_admin</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_category' />
+				</td>
+			    <td class="list-text ">22</td>
+                <td class="list-text ">7840</td>
+				<td class="list-text alignleft">ci_category</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_content' />
+				</td>
+			    <td class="list-text ">4</td>
+                <td class="list-text ">480</td>
+				<td class="list-text alignleft">ci_content</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_ad' />
+				</td>
+			    <td class="list-text ">2</td>
+                <td class="list-text ">760</td>
+				<td class="list-text alignleft">ci_expand_ad</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_adcat' />
+				</td>
+			    <td class="list-text ">3</td>
+                <td class="list-text ">76</td>
+				<td class="list-text alignleft">ci_expand_adcat</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_book' />
+				</td>
+			    <td class="list-text ">4</td>
+                <td class="list-text ">184</td>
+				<td class="list-text alignleft">ci_expand_book</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_link' />
+				</td>
+			    <td class="list-text ">4</td>
+                <td class="list-text ">328</td>
+				<td class="list-text alignleft">ci_expand_link</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_sitelink' />
+				</td>
+			    <td class="list-text ">4</td>
+                <td class="list-text ">184</td>
+				<td class="list-text alignleft">ci_expand_sitelink</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_tags' />
+				</td>
+			    <td class="list-text ">72</td>
+                <td class="list-text ">1744</td>
+				<td class="list-text alignleft">ci_expand_tags</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_expand_vote' />
+				</td>
+			    <td class="list-text ">6</td>
+                <td class="list-text ">360</td>
+				<td class="list-text alignleft">ci_expand_vote</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_menu' />
+				</td>
+			    <td class="list-text ">45</td>
+                <td class="list-text ">2748</td>
+				<td class="list-text alignleft">ci_menu</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_mode' />
+				</td>
+			    <td class="list-text ">7</td>
+                <td class="list-text ">160</td>
+				<td class="list-text alignleft">ci_mode</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_online' />
+				</td>
+			    <td class="list-text ">4</td>
+                <td class="list-text ">192</td>
+				<td class="list-text alignleft">ci_online</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_role' />
+				</td>
+			    <td class="list-text ">1</td>
+                <td class="list-text ">152</td>
+				<td class="list-text alignleft">ci_role</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_user' />
+				</td>
+			    <td class="list-text ">1</td>
+                <td class="list-text ">104</td>
+				<td class="list-text alignleft">ci_user</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_user_group' />
+				</td>
+			    <td class="list-text ">1</td>
+                <td class="list-text ">44</td>
+				<td class="list-text alignleft">ci_user_group</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_visit_day' />
+				</td>
+			    <td class="list-text ">52</td>
+                <td class="list-text ">3776</td>
+				<td class="list-text alignleft">ci_visit_day</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_visit_detail' />
+				</td>
+			    <td class="list-text ">28</td>
+                <td class="list-text ">1612</td>
+				<td class="list-text alignleft">ci_visit_detail</td>
+              </tr>
+                            <tr class="mouse click">
+                <td class="list-text">
+				<input name='id[]' type='checkbox' id="id" value='ci_visit_summary' />
+				</td>
+			    <td class="list-text ">18</td>
+                <td class="list-text ">3096</td>
+				<td class="list-text alignleft">ci_visit_summary</td>
+              </tr>
+                      
+   	   <tr> 
+            <td class="all"><input name="chkAll" type="checkbox" id="chkAll" onclick=CheckAll(this.form) value="checkbox"></td>
+			 <td class="all-submit" colspan="7" style="padding:5px;">
+				 <input type='submit' value='开始备份数据' class="submit li-submit"/>
+			  </td>
+          </tr>
+		</form>
+		
+</table>
+</div>
+</div>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.0925 seconds </div>
+</body>
+</html>

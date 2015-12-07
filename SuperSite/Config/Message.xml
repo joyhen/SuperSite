@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <commontip>
+    <item name="DefaultError" zhcn="内部错误" zhtw="內部錯誤" en="system internal error" />
+    <item name="ExecuteFail" zhcn="执行失败" zhtw="執行失敗" en="execute fail" />
+    <item name="ExecuteSuccess" zhcn="执行成功" zhtw="執行成功" en="execute success" />
+    <item name="NoLogin" zhcn="您尚未登录" zhtw="您尚未登入" en="please login system" />
+    <item name="RequestError" zhcn="请求错误" zhtw="請求錯誤" en="request error" />
+    <item name="NoRightRequest" zhcn="无权操作" zhtw="無權操作" en="you have no prower to handle it" />
+    <item name="ParamAnalysisError" zhcn="参数解析错误" zhtw="參數解析錯誤" en="error paramters" />
+    <item name="NotnormalRequest" zhcn="非正常请求" zhtw="非正常請求" en="not normal request" />
+    <item name="GetDataFail" zhcn="获取数据失败" zhtw="獲取數據失敗" en="get data fail" />
+    <item name="NullData" zhcn="没有数据" zhtw="沒有數據" en="no data" />
+  </commontip>
+
+  <logintip>
+    <item name="NameOrPassworldNull" zhcn="用户名或密码为空" zhtw="用戶名或密碼為空" en="login account or password is empty" />
+    <item name="ValidateError" zhcn="验证码错误" zhtw="驗證碼錯誤" en="validate code isn't correct" />
+    <item name="UserNameNotMatchUserPwd" zhcn="用户名或密码错误错误" zhtw="用戶名或密碼錯誤錯誤" en="account and password does not match" />
+    <item name="LoginError" zhcn="登录失败" zhtw="登入失敗" en="login error" />
+    <item name="LoginQuestionFail" zhcn="登录口令校验失败" zhtw="登錄口令校驗失敗" en="login question's answer is'nt correct" />
+  </logintip>
+
+</config>

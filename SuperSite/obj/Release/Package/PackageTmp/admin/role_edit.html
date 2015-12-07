@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>编辑角色</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+</head>
+<body>
+	<div class="metinfotop">
+	<div class="position">简体中文：网站设置 > <a href="role.html">角色管理</a> > 编辑角色</div>
+	<div class="return"><a href="javascript:;" onClick="location.href='javascript:history.go(-1)'">&lt;&lt;返回</a></div>
+	</div>
+	<div class="clear"></div>
+	<div class="stat_list">
+		<ul>
+			<li ><a href="admin.html" title="用户管理">用户管理</a></li>
+			<li class="now"><a href="role.html" title="角色管理">角色管理</a></li>
+		</ul>
+	</div>
+	<div style="clear:both;"></div>
+<form method="post" name="myform" action="index.php/admin/role/edit?id=4">	
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+<div class="v52fmbx">
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>角色名称：</dt>
+			<dd><input id="title" name="title" type="text" class="text nonull" value="普通用户"><span class="red"></span></dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>角色描述：</dt>
+			<dd>
+				<textarea class="textarea gen" rows="5" cols="60" name="memo">普通用户</textarea>
+			</dd>
+		</dl>
+		</div>
+		
+		<!--<div class="v52fmbx_dlbox tradpoplist">
+		<dl>
+			<dt>操作权限：</dt>
+			<dd>
+				<div id="adminrate">
+				<input name="act[]" type="checkbox" class="checkbox" value="add" >&nbsp;添加信息
+				<input name="act[]" type="checkbox" class="checkbox" value="edit" >&nbsp;修改信息
+				<input name="act[]" type="checkbox" class="checkbox" value="del" >&nbsp;删除信息
+				</div>
+			</dd>
+		</dl>
+		</div>-->
+		
+		<div class="v52fmbx_dlbox v52fmbx_mo tradpoplist">
+		<dl>
+			<dt>栏目权限：</dt>
+			<dd>
+			<label><input name="admin_pop" type="checkbox" value="yes" id="chkAll" onclick=CheckAll(this.form) class="checkbox">全部选择</label>
+			
+			
+	        			<div class="admin_poplistdiv round">
+				<span style="display:none"><input type="checkbox" class="checkbox" ></span>
+				<h2><input name="lever[]" type="checkbox" class="checkbox" value="1" checked> 快捷导航</h2>
+				<div class="clear"></div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="2" checked >系统信息</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="49" checked >基本设置</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="77" checked >栏目管理</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="78" checked >界面风格</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="7"  >模块管理</label>&nbsp;&nbsp;
+							</div>
+						<div class="admin_poplistdiv round">
+				<span style="display:none"><input type="checkbox" class="checkbox" ></span>
+				<h2><input name="lever[]" type="checkbox" class="checkbox" value="10" checked> 内容管理</h2>
+				<div class="clear"></div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="58" checked >内容管理</label>&nbsp;&nbsp;
+								<div class="adpopcnkdiv round poplang_cn">
+					<div class="clear"></div>
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="71" checked>文章模块</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="72" checked>产品模块</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="73" checked>视频模块</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="74" checked>案例模块</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="75" checked>查看留言</label>&nbsp;&nbsp;
+									</div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="62" checked >底部信息</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="59" checked >内容回收站</label>&nbsp;&nbsp;
+							</div>
+						<div class="admin_poplistdiv round">
+				<span style="display:none"><input type="checkbox" class="checkbox" ></span>
+				<h2><input name="lever[]" type="checkbox" class="checkbox" value="37" checked> 优化推广</h2>
+				<div class="clear"></div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="36"  >访问统计</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="81"  >内链管理</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="13" checked >友情链接</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="63" checked >站内广告</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="69" checked >SEO参数</label>&nbsp;&nbsp;
+							</div>
+						<div class="admin_poplistdiv round">
+				<span style="display:none"><input type="checkbox" class="checkbox" ></span>
+				<h2><input name="lever[]" type="checkbox" class="checkbox" value="12" checked> 企业应用</h2>
+				<div class="clear"></div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="54" checked >我的应用</label>&nbsp;&nbsp;
+								<div class="adpopcnkdiv round poplang_cn">
+					<div class="clear"></div>
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="40" checked>会员管理</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="66" checked>文件管理</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="11" checked>在线客服</label>&nbsp;&nbsp;
+									</div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="79" checked >应用市场</label>&nbsp;&nbsp;
+								<div class="adpopcnkdiv round poplang_cn">
+					<div class="clear"></div>
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="41" checked>robots在线修改器</label>&nbsp;&nbsp;
+										<label><input name="lever[]" type="checkbox" class="checkbox" value="39" checked>内容批量替换器</label>&nbsp;&nbsp;
+									</div>
+							</div>
+						<div class="admin_poplistdiv round">
+				<span style="display:none"><input type="checkbox" class="checkbox" ></span>
+				<h2><input name="lever[]" type="checkbox" class="checkbox" value="20" checked> 网站设置</h2>
+				<div class="clear"></div>
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="9" checked >栏目管理</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="21" checked >界面风格</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="48" checked >水印缩图</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="47" checked >网站安全</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="5" checked >管理员管理</label>&nbsp;&nbsp;
+								<label><input name="lever[]" type="checkbox" class="checkbox" value="35" checked >数据备份</label>&nbsp;&nbsp;
+							</div>
+				
+			
+		
+
+			<div class="v52fmbx_dlbox v52fmbx_mo">
+				<dl>
+					<dt></dt>
+					<dd>
+						<input type="submit"  value="保存" class="submit" onclick="return Smit($(this),'myform')" />
+					</dd>
+				</dl>
+			</div>
+	</div>
+	
+</div>
+</div>
+</div>      
+</form>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.1175 seconds </div>
+</body>
+</html>

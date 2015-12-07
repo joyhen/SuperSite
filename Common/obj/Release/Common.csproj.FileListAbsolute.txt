@@ -1,0 +1,13 @@
+F:\study\SuperSite\Common\bin\Release\Common.dll
+F:\study\SuperSite\Common\bin\Release\Common.pdb
+F:\study\SuperSite\Common\bin\Release\Config.dll
+F:\study\SuperSite\Common\bin\Release\Dapper.Contrib.dll
+F:\study\SuperSite\Common\bin\Release\Dapper.dll
+F:\study\SuperSite\Common\bin\Release\Model.dll
+F:\study\SuperSite\Common\bin\Release\Newtonsoft.Json.dll
+F:\study\SuperSite\Common\bin\Release\Dapper.ContribPart.dll
+F:\study\SuperSite\Common\bin\Release\Config.pdb
+F:\study\SuperSite\Common\bin\Release\Model.pdb
+F:\study\SuperSite\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+F:\study\SuperSite\Common\obj\Release\Common.dll
+F:\study\SuperSite\Common\obj\Release\Common.pdb

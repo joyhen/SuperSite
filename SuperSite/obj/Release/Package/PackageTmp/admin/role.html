@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>角色管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+<!--[if lte IE 9]>
+<SCRIPT language=JavaScript>  
+function killErrors() {  
+return true;  
+}  
+window.onerror = killErrors;  
+</SCRIPT> 
+<![endif]-->
+
+</head>
+<body>
+
+<script type="text/javascript">
+function metreturn(url){
+	if(url){
+		location.href=url;
+	}else if($.browser.msie){
+		history.go(-1);
+	}else{
+		history.go(-1);
+	}
+}
+</script>
+	<div class="metinfotop">
+
+	<div class="position">简体中文 > 网站设置 > <a href="role.html">角色管理</a></div>
+
+
+	</div>
+	<div class="clear"></div>
+
+	
+</div>
+<div class="stat_list">
+	<ul>
+		<li ><a href="admin.html" title="用户管理">用户管理</a></li>
+		<li class="now"><a href="role.html" title="角色管理">角色管理</a></li>
+	</ul>
+</div>
+<div style="clear:both;"></div>
+<div class="v52fmbx_tbmax v52fmbx_tbmaxmt">
+<div class="v52fmbx_tbbox">
+<h3 class="v52fmbx_hr">
+
+			<a href="role_add.html">+新增</a>
+
+			<div class="formright">
+			<form method="post" action="index.php/admin/role/index">
+			角色名&nbsp;<input name="title" type="text" value="" class="text100 med" />
+			<input type="submit" value="搜索" class="bnt_pinyin">&nbsp;
+			</form>
+			</div>
+</h3>
+<table cellpadding="2" cellspacing="1" class="table">
+              <tr>
+                <td width="50" class="list" style="padding:0px; text-align:center;">选择</td>
+                <td width="150" class="list alignleft">角色名称</td>
+                <td class="list">角色描述</td>
+                <td class="list" width="150" style="padding:0px; text-align:center;">创建日期</td>
+				<td width="100" class="list" style="padding:0px; text-align:center;">操作</td>
+              </tr>
+			  <form name="myform" method="post" id="myform">
+                            <tr class="mouse click">
+                <td class="list-text"><input id="id" type="checkbox" value="4" name="id[]"></td>
+                <td class="list-text alignleft"><a href="index.php/admin/role/edit?id=4" title="查看详细">普通用户</a></td>
+                <td class="list-text alignleft" title="普通用户">普通用户</td>
+                <td class="list-text color999">2013-05-09 19:23:00</td>
+				<td class="list-text">
+				<a href="role_edit.html">编辑</a>
+				<a href="javascript:;" onclick="{if(confirm('确定删除吗?')){window.location='index.php/admin/role/del?id=4&&page=1';return true;}return false;}">删除</a>
+				</td>
+              </tr>
+			  
+			  <tr> 
+				 <td width="40" class="all"><input name="chkAll" type="checkbox" id="chkAll" onclick=CheckAll(this.form) value="checkbox"> </td>
+				 <td class="all-submit" colspan="8" style="padding:5px 10px;">
+					  <input type='submit' value='删除' class="submit li-submit" onclick="{if(confirm('确定删除吗?')){document.myform.action='index.php/admin/role/delsome?page=1';return true;}return false;}"/>
+					  
+					  </td>
+			  </tr>
+			  </form>
+
+		      <tr>
+			  <td class="page_list" colspan="9"> <form method='POST' name='page1'  action='index.php/admin/role/index?&page=1' target='_self'><style>.digg4 a{ border:1px solid #ccdbe4; padding:2px 8px 2px 8px; background:#fff; background-position:50%; margin:2px; color:#666; text-decoration:none;}
+	.digg4 a:hover { border:1px solid #999; color:#fff; background-color:#999;}
+	.digg4 a:active {border:1px solid #000099; color:#000000;}
+	.digg4 span.current { padding:2px 8px 2px 8px; margin:2px; text-decoration:none;}
+	.digg4 span.disabled { border:1px solid #ccc; background:#fff; padding:1px 8px 1px 8px; margin:2px; color:#999;}
+	 </style><div class='digg4'>
+	 <span class="disabled" style="font-family: Tahoma, Verdana;"><b>«</b></span><span class="disabled" style="font-family: Tahoma, Verdana;">‹</span><span class="current">1</span><span class="disabled" style="font-family: Tahoma, Verdana;">›</span><span class="disabled" style="font-family: Tahoma, Verdana;"><b>»</b></span>  共1条 	  转到<input name='page_input' class='page_input' />页  <input type='submit' name='Submit3' value=' go ' class="bnt_pinyin"/></form></div></td>
+		  </tr>
+</table>
+</div>
+</div>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.2291 seconds </div>
+</body>
+</html>

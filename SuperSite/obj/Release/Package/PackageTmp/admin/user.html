@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>会员管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js?5202"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script type="text/javascript">
+/*ajax执行*/
+var lang = 'cn';
+var metimgurl='statics/base/images/';
+var depth='../';
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+<!--[if lte IE 9]>
+<SCRIPT language=JavaScript>  
+function killErrors() {  
+return true;  
+}  
+window.onerror = killErrors;  
+</SCRIPT> 
+<![endif]-->
+</head>
+<body>
+
+<script type="text/javascript">
+function metreturn(url){
+	if(url){
+		location.href=url;
+	}else if($.browser.msie){
+		history.go(-1);
+	}else{
+		history.go(-1);
+	}
+}
+
+</script>
+	<div class="metinfotop">
+
+	<div class="position">简体中文 > 企业应用 > <a href="index.php/admin/app">会员管理</a></div>
+
+
+	</div>
+	<div class="clear"></div>
+
+	</div>
+
+<div class="stat_list">
+	<ul>
+		<li class="now"><a href="user.html" title="会员管理">会员管理</a></li>
+		<li ><a href="user_group.html" title="会员组设置">会员组设置</a></li>
+		<li ><a href="user_config.html" title="会员功能设置">会员功能设置</a></li>
+	</ul>
+</div>
+<div style="clear:both;"></div>
+
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+<table cellpadding="2" cellspacing="1" class="table">
+              <tr>
+				<td class="centle" colspan="7" style=" height:20px; line-height:30px; font-weight:normal; padding-left:10px;">
+					<div style="float:left;">
+					<a href="user_add.html">+新增</a>
+					</div>
+					<div class="formright">	
+					<a href="index.php/admin/user/index"><font color="red">显示所有</font></a>
+					<form method="post" name="filterform" action="index.php/admin/user/index">
+					<span>会员类型</span>
+					<select name="gid" id="usertype" onChange="handle_form('filterform')">
+						<option value="0" >选择类型</option>
+												<option value='1' >新手上路</option>
+											</select>
+					</form>
+					<form method="post" name="search" action="index.php/admin/user/index">
+						<input name="keyword" type="text" class="text100"  value="" />
+						<input type="submit" name="searchsubmit" value="搜索" class="bnt_pinyin"/>
+					</form>
+					</div>
+				</td>
+			  </tr>
+			  
+
+              <tr>
+			    <td width="40" class="list" style="padding:0px; text-align:center;">选择</td>
+                <td width="170" class="list">用户名</td>
+              
+				<td width="80" class="list" style="padding:0px; text-align:center;">会员组</td>
+                <td width="80" class="list" style="padding:0px; text-align:center;">登录次数</td>
+				<td width="150" class="list" style="padding:0px; text-align:center;">最后登录时间</td>
+				<td width="60" class="list" style="padding:0px; text-align:center;">状态</td>
+				<td width="60" class="list" style="padding:0px; text-align:center;">操作</td>
+              </tr>
+			  <form name="myform" method="post" id="myform">
+                            <tr class="mouse click">
+                <td class="list-text"><input name="id[]" type="checkbox" id="id" value="27" /></td>
+                <td class="list-text alignleft">&nbsp;&nbsp;<a href="index.php/admin/user/edit?id=27" title="查看详细">uuuuu</a></td>
+                
+				<td class="list-text color999">新手上路</td>
+                <td class="list-text color999">0</td>
+				<td class="list-text color999" ></td>
+                <td class="list-text color999"><a href="index.php/admin/user/doset?act=nostatus&id=27&&page=1"><img src="statics/base/images/ok_1.gif"></a></td>
+				<td class="list-text">
+				<a href="user_edit.html?id=27" >编辑</a>&nbsp;&nbsp;
+				<a href="javascript:;" onclick="{if(confirm('确定删除吗?')){window.location='index.php/admin/user/del?id=27&&page=1';return true;}return false;}" >删除</a></td>
+				</td>
+              </tr>
+                      
+			  
+		<tr> 
+            <td width="40" class="all"><input name="chkAll" type="checkbox" id="chkAll" onclick=CheckAll(this.form) value="checkbox"></td>
+			  <td class="all-submit" colspan="6" style="padding:5px 10px;">
+			  <input type='submit' value='删除' class="submit li-submit" onclick="{if(confirm('确定删除吗?')){document.myform.action='index.php/admin/user/delsome?&page=1';return true;}return false;}"/>&nbsp;&nbsp;
+			 </td>
+          </tr>
+		  </form>
+		 <tr>
+		  <td class="page_list" colspan="7">
+		  <form method="POST" action="index.php/admin/user/index?&page=1">
+			<style>.digg4 a{ border:1px solid #ccdbe4; padding:2px 8px 2px 8px; background:#fff; background-position:50%; margin:2px; color:#666; text-decoration:none;}
+			.digg4 a:hover { border:1px solid #999; color:#fff; background-color:#999;}
+			.digg4 a:active {border:1px solid #000099; color:#000000;}
+			.digg4 span.current { padding:2px 8px 2px 8px; margin:2px; text-decoration:none;}
+			.digg4 span.disabled { border:1px solid #ccc; background:#fff; padding:1px 8px 1px 8px; margin:2px; color:#999;}
+		   </style>
+			<div class='digg4'>
+			 <span class="disabled" style="font-family: Tahoma, Verdana;"><b>«</b></span><span class="disabled" style="font-family: Tahoma, Verdana;">‹</span><span class="current">1</span><span class="disabled" style="font-family: Tahoma, Verdana;">›</span><span class="disabled" style="font-family: Tahoma, Verdana;"><b>»</b></span>  共1条 			 转到
+			 <input name='page' class='page_input' value="1" />页 
+			 <input type='submit' value=' go ' class="bnt_pinyin"/>
+			 </form>
+			</div>
+		  
+		  </td>
+	  </tr>
+</table>
+</div>
+</div>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.3630 seconds </div>
+<script type="text/javascript">
+$(document).ready(function(){
+	seachinput($('#searchtext'),'用户名查询');
+});
+</script>
+</body>
+</html>

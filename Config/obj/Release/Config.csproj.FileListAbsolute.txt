@@ -1,0 +1,4 @@
+F:\study\SuperSite\Config\bin\Release\Config.dll
+F:\study\SuperSite\Config\bin\Release\Config.pdb
+F:\study\SuperSite\Config\obj\Release\Config.dll
+F:\study\SuperSite\Config\obj\Release\Config.pdb

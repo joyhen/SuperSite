@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>栏目添加</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/metinfo.css" />
+<link rel="stylesheet" type="text/css" href="statics/base/css/newstyle.css" />
+<script type="text/javascript">var basepath='statics/base/images';</script>
+<script type="text/javascript" src="statics/base/js/metvar.js"></script>
+<script type="text/javascript" src="statics/base/js/jQuery1.7.2.js"></script>
+<script type="text/javascript" src="statics/base/js/iframes.js"></script>
+<script type="text/javascript" src="statics/base/js/cookie.js"></script>
+<script charset="utf-8" src="statics/lib/kind/kindeditor-min.js?a=1"></script>
+<script charset="utf-8" src="statics/lib/kind/lang/zh_CN.js?a=1"></script>
+<script type="text/javascript">
+var session_id = "updcbqf78qdbdv7r5jblo21up4";
+var getpinyinurl="index.php/admin/content/getpinyin"; 
+var getenglishurl="index.php/admin/content/getenglish"; 
+var gettagspath="index.php/admin/content/gettags";
+var upload_json="statics/lib/kind/php/upload_json.php";
+var file_manager_json="statics/lib/kind/php/file_manager_json.php";
+var editor;
+KindEditor.ready(function(K) {
+    var editor = K.create('textarea[name="info"]', {
+		urlType : 'domain',
+		allowFileManager : true
+	});
+	K('#image').click(function() {
+		editor.loadPlugin('image', function() {
+			editor.plugin.imageDialog({
+				imageUrl : K('#pic').val(),
+					clickFn : function(url, title, width, height, border, align) {
+						K('#pic').val(url);
+						editor.hideDialog();
+					}
+			});
+		});
+	});
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	ifreme_methei();
+});
+</script>
+</head>
+<body>
+	<div class="metinfotop">
+	<div class="position">简体中文：栏目配置 > <a href="category.html">栏目配置</a> > 修改栏目</div>
+
+	<div class="return"><a href="javascript:;" onClick="location.href='javascript:history.go(-1)'">&lt;&lt;返回</a></div>
+
+	</div>
+	<div class="clear"></div>
+
+
+		
+<form method="post" name="myform" action="index.php/admin/category/add">
+		
+<div class="v52fmbx_tbmax">
+<div class="v52fmbx_tbbox">
+<div class="v52fmbx">
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>栏目名称：</dt>
+			<dd><input name="title" id="title" type="text" class="text nonull" value="" /></dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>URL名称：</dt>
+			<dd>
+			<input name="dir" id="dir" type="text" class="text nonull" value="" />
+			<input type="button" value="拼音" class="bnt_pinyin" config="title:dir"> 
+			<input type="button" value="英文" class="bnt_english" config="title:dir">
+			<span class="tips">URL优化</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>栏目模型：</dt>
+			<dd>
+			<select name="pid"><option value="0">作为一级栏目</option><option  value="44">聚贤简述</option>
+<option  value="45">艺术品展示</option>
+<option  value="55">　├ 企业形象网站</option>
+<option  value="74">　├ 品牌网站设计</option>
+<option  value="96">　├ 互动专题设计</option>
+<option  value="97">　├ 大型门户网站</option>
+<option  value="101">　├ cccc</option>
+<option  value="48">业务范围</option>
+<option  value="67">　├ ABOUT US 关于我们</option>
+<option  value="58">　├ 婚纱摄影</option>
+<option  value="75">　├ 客片欣赏</option>
+<option  value="76">　├ 视频专区</option>
+<option  value="77">　├ 聚焦ARTIZ</option>
+<option  value="50">网上鉴定</option>
+<option  value="51">　├ SEO知识</option>
+<option  value="78">　├ 优秀设计大赏</option>
+<option  value="79">　├ 视界团队动态</option>
+<option  value="52">　├ 网站建设知识</option>
+<option  value="95">　├ 网络营销知识</option>
+<option  value="68">招聘事宜</option>
+<option  value="98">　├ 网站地图</option>
+<option  value="100">在线留言</option>
+</select>
+			<select name="modeid" class="noselect">
+		    <option value="">请选择模型</option>
+		    		    <option value="1">单篇模型</option>
+		    		    <option value="2">文章模型</option>
+		    		    <option value="3">产品模型</option>
+		    		    <option value="4">案例模型</option>
+		    		    <option value="5">视频模型</option>
+		    		    </select>
+			
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>列表模板：</dt>
+			<dd>
+			<input name="lists"  type="text" class="text " value="" />
+			<span class="tips">可以为空 (模板路径) 例如:model/news/list</span>
+			
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>内容模板：</dt>
+			<dd>
+			<input name="shows"  type="text" class="text " value="" />
+			<span class="tips">可以为空 (模板路径) 例如:model/news/show</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>是否启用：</dt>
+			<dd>
+			<input name="status" type="radio" class="radio"  value="1" checked/>是&nbsp;&nbsp;
+			<input name="status" type="radio" class="radio"  value="0" />否&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>是否新窗口：</dt>
+			<dd>
+			<input name="isself" type="radio" class="radio"  value="1"/>是&nbsp;&nbsp;
+			<input name="isself" type="radio" class="radio"  value="0" checked/>否&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="tips">是否新窗口打开</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>底部显示：</dt>
+			<dd>
+			<input name="isdown" type="radio" class="radio"  value="1"/>是&nbsp;&nbsp;
+			<input name="isdown" type="radio" class="radio"  value="0" checked/>否&nbsp;&nbsp;&nbsp;&nbsp;
+			<span class="tips">是否底部显示</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>分页数：</dt>
+			<dd><input name="pagenum" type="text" class="text mid" value="10" />
+			<span class="tips">多少条1页    仅支持（新闻、产品、视频、案例）模块列表</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>排序：</dt>
+			<dd><input name="ordnum" type="text" class="text mid" value="99" /></dd>
+		</dl>
+		</div>
+
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>栏目图片：</dt>
+			<dd>
+				<input name="pic" type="text" id="pic"  class="text" maxlength="200" value="" />
+				<input type="button" id="image" class="bnt_public" value="图片上传"/>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>外部连接：</dt>
+			<dd>
+				<input name="url" type="text" class="text" maxlength="200" value="" />
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>详细内容：</dt>
+			<dd>
+				<textarea class="ckeditor" name="info" style="width:98%;"></textarea>
+			</dd>
+		</dl>
+		</div>
+		
+		
+
+	<h3 class="v52fmbx_hr metsliding" sliding="3">搜索引擎优化设置(seo)</h3>
+	<div class="metsliding_box metsliding_box_3">
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>页面Title：</dt>
+			<dd>
+				<input name="seotitle" type="text" class="text" value="">
+				<span class="tips">为空则使用SEO参数设置中设置的title构成方式</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>关键词：</dt>
+			<dd>
+				<input name="seokey" type="text" class="text" size="40"  value="">
+				<span class="tips">用于搜索引擎优化,多个关键词请用","隔开</span>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox">
+		<dl>
+			<dt>简短描述：</dt>
+			<dd>
+			    <textarea name="seodesc" class="textarea gen" ></textarea>
+			</dd>
+		</dl>
+		</div>
+		
+		<div class="v52fmbx_dlbox v52fmbx_mo">
+		<dl>
+			<dt></dt>
+			<dd>
+			    <input type="submit"  value="保存" class="submit" onclick="return Smit($(this),'myform')" />
+			</dd>
+		</dl>
+		</div>
+	</div>
+	
+   <div class="v52fmbx_dlbox v52fmbx_mo" style="height:200px">
+		 <dl>
+			<dt></dt>
+			<dd></dd>	
+		</dl>	
+	</div>
+</div>
+</div>
+</div>      
+</form>
+<div class="footer">Powered by <b><a href="http://www.phpci.com" target="_blank">phpci 6.0.0 </a></b> &copy;2008-2015 &nbsp;<a href="http://www.phpci.com" target="_blank">phpci Inc.</a> in 0.1976 seconds </div>
+
+</body>
+</html>

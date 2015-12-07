@@ -1,0 +1,23 @@
+﻿此库负责第三方对接（后期处理，慢慢完善）
+
+1.各种登录方式
+2.主流支付方式
+3.主流分享
+4.开源平台对接
+5.开源api
+....
+
+qq 登录
+http://jingyan.baidu.com/article/5225f26b0ed354e6fb09085d.html
+http://connect.qq.com/manage/
+
+
+
+
+
+
+
+
+
+
+
