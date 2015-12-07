@@ -7,8 +7,8 @@ Developing language：C#
 Framework Version: 4.0
 Database: SQL2005 or later
 
-Current function:
-  1.Multi language
+Current function:<br/>
+  1.Multi language<br/>
   2.Configurable
   3.Request encryption（it is easy to expand into role permissions...）
   4.FriendlyUrl
