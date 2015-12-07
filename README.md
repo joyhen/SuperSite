@@ -1,7 +1,7 @@
 # SuperSite
 Build super of the enterprise website
 
-<h4>License</h4>WTFPL（Do What the Fuck You Want to Public License 【https://github.com/anak10thn/WTFPL】）
+<h4>License</h4>WTFPL（Do What the Fuck You Want to Public License https://github.com/anak10thn/WTFPL）
 
 <h4>Environment</h4>
   Developing language:C#<br/>
