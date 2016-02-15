@@ -1,135 +1,42 @@
 ﻿document.write("<script type='text/javascript' src='statics/lib/parseUri.1.2.2.js'></script>");
 document.write("<script type='text/javascript' src='statics/lib/jquery.serializeJSON.js'></script>");
 document.write("<script type='text/javascript' src='statics/lib/layer-v2.0/layer/layer.js'></script>");
-document.write("<script type='text/javascript' src='statics/lib/mustache.min.js'></script>");
 
-var globalAjaxParamGet = 'ajaxparam';
-
-//固定浮动
-$.fn.smartFloat = function (width_p) {
-
-    var position = function (element) {
-        var top = element.position().top,
-            pos = element.css("position");
-
-        $(window).scroll(function () {
-
-            var scrolls = $(this).scrollTop();
-
-            if (scrolls > top) {
-                if (window.XMLHttpRequest) {
-                    element.css({
-                        position: "fixed",
-                        'z-index': 999,
-                        width: width_p,
-                        top: 0
-                    });
-                } else {
-                    element.css({ top: scrolls });
-                }
-            } else {
-                element.css({
-                    position: "", //absolute  
-                    top: top
-                });
-            }
-        });
-    };
-
-    return $(this).each(function () {
-        position($(this));
-    });
-};
-
-function getValidateMsg($validatedom, currenturl) {
-    var msgtip = "can't be empty";                      //out msg
-    var msgmodel = '';                                  //smg model
-    var msgkey = '';                                    //msg key
-    var vtxt = $.trim($validatedom.attr('validate'));   //model$key
-
-    if (vtxt == '') return msgtip;
-
-    var arr = vtxt.split('$');
-    if (arr.length >= 2) {
-        msgmodel = $.trim(arr[0]);
-        msgkey = $.trim(arr[1]);
-    }
-    else if (arr.length == 1) {
-        msgkey = $.trim(arr[0]);
-
-        var $modeltxt = $validatedom.attr('msgmodel');
-        if ($modeltxt && $.trim($modeltxt).length > 0) {
-            msgmodel = $.trim($modeltxt);
-        }
-    }
-
-    if (msgkey == '') {
-        return msgtip;
-    }
-
-    if (msgmodel == '') {
-        var myurl = parseUri(currenturl || location.href);
-        if (myurl.directory == myurl.path) { //伪静态的情况下
-            var _arr = myurl.path.split('/');
-            msgmodel = _arr[_arr.length - 1];
-        } else {
-            var currentfile = myurl.file;
-            var idx = currentfile.lastIndexOf('.');
-            msgmodel = currentfile.substring(0, idx);
-        }
-    }
-
-    if (msgmodel == '') return msgtip;
-
-    var tips = $.msg[msgmodel];
-    if (tips && tips[msgkey]) {
-        msgtip = tips[msgkey];
-    }
-
-    return msgtip;
-}
-
-//避免重复提交（间隔3秒钟，暂时没有用到,需要修改下）
-function avoidSubmit(dom, fn) {
-    var avoidbutton = $(dom).attr('avoidfrequent');
-    if (avoidbutton != undefined) {
-        var txt = $(dom).val(); //需要修改
-        var tag = parseInt($(dom).attr('submittag') || '0');
-
-        if (tag == 0) {
-            $(dom).attr({ submittag: "1", value: "..." });
-            $(dom).unbind('click');
-
-            setTimeout(function () {
-                $(dom).attr({ submittag: "0", value: txt });
-                $(dom).bind('click', fn);
-            }, 1000 * 3);
-        }
-    }
-}
-
-//输入检查
-function inputcheck(tipFn, chkitem, currenturl) {
+//输入框校验
+function checkInput($checkdom, validateModel, callbackfn, defaultfn) {
     var tag = false;
-    var url = currenturl || location.href;
-    var checkitem = chkitem || $('input[validate],textarea[validate]');
+    var checkitem = $checkdom || $("iframe").contents().find("input[validate],textarea[validate]");
+    if (checkitem.length == 0) return true;
 
-    if (checkitem.length > 0) {
-        checkitem.each(function (idx, dom) {
-            var tar = $(dom);
-            if ($.trim(tar.val()) == '') {
-                if (typeof tipFn == "function") {
-                    tipFn(getValidateMsg(tar, url));
-                }
+    checkitem.each(function (idx, dom) {
+        var tar = $(dom);
+        if ($.trim(tar.val()) == '') {
+            var msgtip = "can't be empty";
+            var msgkey = $.trim(tar.attr('validate'));
 
-                tar.focus();
-                tag = false;
-                return false;
+            var tips = $.msg[validateModel];
+            if (tips) {
+                msgtip = tips[msgkey];
             } else {
-                tag = true;
+                var _title = tar.attr('title');
+                if ($.trim(_title) != '') {
+                    msgtip = _title;
+                }
+            };
+
+            if (typeof callbackfn == "function") {
+                callbackfn(msgtip);
+            } else if (defaultfn) {
+                SuperSite.MsgWarning(msgtip);
             }
-        });
-    }
+
+            tar.focus();
+            tag = false;
+            return false;
+        } else {
+            tag = true;
+        }
+    });
 
     return tag;
 };
@@ -149,9 +56,6 @@ $(function () {
         $(this).removeClass('metfocus');
     });
 
-    //固定面包屑
-    $(".metinfotop").smartFloat($(".v52fmbx_tbmax").width());
-
     //回到顶部
     $('body').append('<div class="gototop" style="display:none;"><span title="回到顶部"></span></div>');
     $('.gototop').click(function () {
@@ -166,7 +70,7 @@ $(function () {
         }
     });
 
-
+    //...
 
 });
 
@@ -193,40 +97,43 @@ function showNavigationPanel() {
     }
 };
 
+//重置表格
+function resetDataTable($table) {
+    var _loading = '<tr><td colspan="15" class="list td_nodata">没有数据</td></tr>';
 
-
-//需要修改
-function resetDataTable(msg) {
-    var _loading = '<tr><td class="td_nodata">没有数据</td></tr>';
-
-    var _tb = $('.table');
+    var _tb = $table;
     var _tr = _tb.find('tr');
-    if (_tr.length <= 0) {
-        _tb.html(_loading);
-    } else if (_tr.length == 2) {
-        _tb.find('tr:last').remove();
+    if (_tr.length <= 1) {
         _tb.html(_loading);
     }
 };
 
-//渲染表格
-function renderTable(param, $table, template, callback) {
+//获取数据，渲染模板
+function renderTemplate(param, template, callback) {
     getJsonData(param, function (result) {
         if (result.success) {
             if (result.data) {
                 Mustache.parse(template || '');
                 var view = Mustache.render(template, result);
-                $table.append(view);
+                if (typeof callback == "function") { callback(view); }
             } else {
-                $table.append('<tr><td colspan="15" class="list td_nodata">没有数据</td></tr>');
+                SuperSite.MsgWarning('获取模板数据失败');
             }
-            if (typeof callback == "function") { callback(); }
         } else {
             SuperSite.MsgFailed(result.msg);
         }
     });
-}
+};
 
+//加载模板内容
+function getTemplate(templateName, isasync, callback) {
+    $.ajax({
+        type: "get",
+        url: 'statics/tpt/' + templateName + '.txt',
+        async: isasync || false, //同步
+        success: callback
+    });
+};
 
 //获取Json数据
 function getJsonData(param, callback) {
@@ -307,11 +214,15 @@ function OpeniframeLayer(opentitle, openurl, layerwh, isclose, showmaxmin, isful
 
 var SuperSite = {
     //0感叹，1对号，2差号，3问号，4凸号，5苦脸，6笑脸
-    MsgWarning: function (msg) {
-        layer.msg(msg || 'Warning', { icon: 0 });
+    MsgWarning: function (msg, time) {
+        var t = time || 1500;
+        layer.msg(msg || 'Warning', { icon: 0, time: t });
     },
-    MsgOK: function (msg) {
-        layer.msg(msg || 'OK', { icon: 1 });
+    MsgOK: function (msg, time, callback) {
+        var t = time || 1500;
+        layer.msg(msg || 'OK', { icon: 1, time: t }, function () {
+            if (typeof callback == "function") { callback(); }
+        });
     },
     MsgError: function (msg) {
         layer.msg(msg || 'Error', { icon: 2 });
@@ -329,9 +240,115 @@ var SuperSite = {
         layer.msg(msg || 'Success', { icon: 6 });
     }
 
-
     //...
 
+};
+
+//检查图片有效性
+function checkimgok(imgsrc) {
+    var checkimg = ['jpg', 'gif', 'jpeg', 'png', 'bmp'];
+    var idx = imgsrc.lastIndexOf('.');
+    var tail = imgsrc.substring(idx + 1, imgsrc.length);
+
+    if ($.trim(tail) == '') {
+        return false;
+    }
+
+    for (var i = 0; i < checkimg.length; i++) {
+        if (checkimg[i] == tail) return true;
+    }
+
+    return false;
+};
+
+//上传远程图片function uploadWebImg(editor) {
+    var relaceSrc = []; //图片地址对象容器
+    var imgs = $(editor.html()).find('img');
+
+    imgs.map(function () {
+        var _src = $(this).attr('src');
+        //if ((_src.indexOf('http://') >= 0 || _src.indexOf('https://') >= 0) && checkimgok(_src)) {
+        //考虑可能有动态生成的图片
+        if ((_src.indexOf('http://') >= 0 || _src.indexOf('https://') >= 0) && _src.indexOf('localhost:') < 0) {
+            relaceSrc.push({ k: _src });
+        };
+    });
+
+    if (relaceSrc.length == 0) return;
+
+    var msg = '内容包含' + relaceSrc.length.toString() + '张远程图片，是否现在上传？';
+
+    confirmLayerNormal(msg, function (_index) {
+        var loading = layer.load(0);
+        var paramdata = {
+            action: "791c252eee12530f4f3af326674b7d97",
+            arg: { imgs: relaceSrc },
+        };
+
+        doAjaxPost(paramdata, function (result) {
+            layer.close(loading);
+            if (!result.success) {
+                SuperSite.MsgError(result.msg);
+                return;
+            }
+
+            //替换编辑器图片源
+            var _content = editor.html();
+            $(relaceSrc).each(function (idx, dom) {
+                _content = _content.replace(dom.k, result.data[idx].value);
+            });
+            editor.html(_content);
+
+            SuperSite.MsgOK('远程图片上传成功');
+        });
+        layer.close(_index);
+    });
+};
+
+function __escape(val) {
+    return val.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+};
+function __unescape(val) {
+    return val.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+};
+
+//绑定校验或提示效果（需要poshytip插件）
+function bindTipMsg($dom) {
+    $dom.poshytip({
+        className: 'tip-yellowsimple',
+        showOn: 'focus',
+        alignTo: 'target',
+        alignX: 'right',
+        alignY: 'center',
+        offsetX: 5,
+        showTimeout: 100
+        //content: function (updateCallback) {
+        //    var msg = $(this).attr('title');
+        //    if (msg && $.trim(msg) != '') {
+        //        return msg;
+        //    }
+
+        //    var msgkey = $.trim($(this).attr('validate'));
+        //    var tips = $.msg[validateModel];
+        //    if (tips) {
+        //        msgtip = tips[msgkey] || "can't be empty";
+        //    }
+
+        //    updateCallback('');
+
+        //    return 'loading tips..';
+        //}
+    });
+};
+
+//鼠标移动到输入框上自动选中内容
+function selectAllInputText($dom) {
+    $dom.hover(function () {
+        $(this).focus();
+        $(this).select();
+    }, function () {
+        $(this).blur();
+    });
 };
 
 //当前日期和时间

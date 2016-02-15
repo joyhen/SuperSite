@@ -48,9 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADO\DataLayer.cs" />
-    <Compile Include="ADO\DataTable2T.cs" />
-    <Compile Include="ADO\ExecuteNonQuery.cs" />
+    <Compile Include="ADO\DBHelp.cs" />
     <Compile Include="Assert.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="DoExecute.cs" />
@@ -66,6 +64,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{2c4dd620-21cd-41da-921a-a4ab1eb810c1}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{1fb05ec7-322b-4792-8949-e3a645d6aa02}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

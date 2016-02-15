@@ -17,6 +17,53 @@
         }
 
         /// <summary>
+        /// 图片上传状态
+        /// </summary>
+        /// <remarks>编辑器粘贴内容包含图片，远程上传</remarks>
+        public enum UploadImgStatus
+        {
+            /// <summary>
+            /// 重复图片
+            /// </summary>
+            Repeat = 0,
+            /// <summary>
+            /// 上传成功
+            /// </summary>
+            OK = 1,
+            /// <summary>
+            /// 上传失败
+            /// </summary>
+            Error = 2
+        }
+
+        /// <summary>
+        /// 栏目模型
+        /// </summary>
+        public enum SiteModelStyle
+        {
+            /// <summary>
+            /// 单篇模型
+            /// </summary>
+            单篇模型 = 1,
+            /// <summary>
+            /// 文章模型
+            /// </summary>
+            文章模型 = 2,
+            /// <summary>
+            /// 产品模型
+            /// </summary>
+            产品模型 = 3,
+            /// <summary>
+            /// 案例模型
+            /// </summary>
+            案例模型 = 4,
+            /// <summary>
+            /// 视频模型
+            /// </summary>
+            视频模型 = 5
+        }
+
+        /// <summary>
         /// 用户类别
         /// <remarks>非系统用户角色</remarks>
         /// </summary>

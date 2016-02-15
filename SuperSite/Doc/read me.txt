@@ -1,1 +1,23 @@
 
+【零碎代码】
+
+$("table").delegate("td", "hover", function(){
+    $(this).toggleClass("hover");
+});
+
+//等价于下面的代码
+
+$("table").each(function(){    
+    $("td", this).live("hover", function(){          
+        $(this).toggleClass("hover");    
+    });
+});
+
+-----------------------------------------------------------
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+﻿<div class="v52fmbx_dlbox">
+    <dl>
+        <dt>栏目模型：</dt>
+        <dd>
+            <select id="modelpid">
+                <option value="0">作为一级栏目</option>
+                <option value="44">聚贤简述</option>
+                <option value="45">艺术品展示</option>
+                <option value="55">├ 企业形象网站</option>
+                <option value="74">├ 品牌网站设计</option>
+                <option value="96">├ 互动专题设计</option>
+                <option value="97">├ 大型门户网站</option>
+                <option value="101">├ cccc</option>
+                <option value="48">业务范围</option>
+                <option value="67">├ ABOUT US 关于我们</option>
+                <option value="58">├ 婚纱摄影</option>
+                <option value="75">├ 客片欣赏</option>
+                <option value="76">├ 视频专区</option>
+                <option value="77">├ 聚焦ARTIZ</option>
+                <option value="50">网上鉴定</option>
+                <option value="51">├ SEO知识</option>
+                <option value="78">├ 优秀设计大赏</option>
+                <option value="79">├ 视界团队动态</option>
+                <option value="52">├ 网站建设知识</option>
+                <option value="95">├ 网络营销知识</option>
+                <option value="68">招聘事宜</option>
+                <option value="98">├ 网站地图</option>
+                <option value="100">在线留言</option>
+            </select>
+            <select name="sitemodel" class="noselect">
+                <option value="-1">请选择模型</option>
+                <option value="1">单篇模型</option>
+                <option value="2">文章模型</option>
+                <option value="3">产品模型</option>
+                <option value="4">案例模型</option>
+                <option value="5">视频模型</option>
+            </select>
+        </dd>
+    </dl>
+</div>

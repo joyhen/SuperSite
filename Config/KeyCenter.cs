@@ -37,6 +37,10 @@ namespace Config
         /// 系统当前配置信息缓存键
         /// </summary>
         public const string KeySystemSettingCache = "sp_SystemSettingCache";
+        /// <summary>
+        /// 站点当前配置信息缓存键
+        /// </summary>
+        public const string KeySiteSettingCache = "sp_SiteSettingCache";
 
         /// <summary>
         /// 验证码session键
@@ -77,6 +81,10 @@ namespace Config
         /// 数据默认初始时间
         /// </summary>
         public static DateTime KeyStartTime = new DateTime(2000, 1, 1);
+        /// <summary>
+        /// 系统默认密码
+        /// </summary>
+        public const string KeyDefaultPwd = "123456";
 
 
         #region Files
@@ -85,6 +93,22 @@ namespace Config
         ///// </summary>
         //public readonly static string KeyUserPhotoFolder = "Config";
 
+        /// <summary>
+        /// 系统当前信息配置文件
+        /// </summary>
+        public const string KeySystemSettingFile = "system.bin";
+        /// <summary>
+        /// 站点当前信息配置文件
+        /// </summary>
+        public const string KeySiteSettingFile = "site.bin";
+        /// <summary>
+        /// 当前程序信息配置说明
+        /// </summary>
+        public const string KeySuperSiteProgramFile = "supersite.bin";
+        /// <summary>
+        /// 用户登录信息文件
+        /// </summary>
+        public readonly static string KeyLoginRecordFile = "login.bin";
 
         #endregion
 

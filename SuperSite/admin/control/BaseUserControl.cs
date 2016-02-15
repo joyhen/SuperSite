@@ -1,12 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using System.Collections.Generic;
-
-namespace SuperSite.admin.control
+﻿namespace SuperSite.admin.control
 {
-    using Config;
     using Tools;
+    using Config;
 
     /// <summary>
     /// 用户控件基类
@@ -36,7 +31,7 @@ namespace SuperSite.admin.control
             /// </summary>
             a
         }
-
+        
         /// <summary>
         /// 当前系统语言
         /// </summary>

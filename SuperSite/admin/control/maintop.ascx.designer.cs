@@ -76,31 +76,13 @@ namespace SuperSite.admin.control {
         protected global::SuperSite.admin.control.langlabel navigation;
         
         /// <summary>
-        /// message 控件。
+        /// content 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::SuperSite.admin.control.langlabel message;
-        
-        /// <summary>
-        /// plugin 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::SuperSite.admin.control.langlabel plugin;
-        
-        /// <summary>
-        /// statistics 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::SuperSite.admin.control.langlabel statistics;
+        protected global::SuperSite.admin.control.langlabel content;
         
         /// <summary>
         /// setting 控件。

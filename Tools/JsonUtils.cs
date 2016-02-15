@@ -26,6 +26,7 @@ namespace Tools
         {
             return JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings()
             {
+                //驼峰结构，和js的写法保存一致
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 //ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                 Converters = new JsonConverter[1] { _timeFormat }

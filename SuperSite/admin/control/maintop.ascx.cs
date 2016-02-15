@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SuperSite.admin.control
 {
@@ -13,5 +8,11 @@ namespace SuperSite.admin.control
         {
 
         }
+
+        /// <summary>
+        /// 当前用户
+        /// </summary>
+        public Model.Entity.SysUser CurrentUser { get; set; }
+
     }
 }

@@ -39,7 +39,6 @@ namespace Tools
         /// 日志锁定  
         /// </summary>  
         private readonly static Object Lok = new Object();
-
         /// <summary>  
         /// 记录日志  
         /// </summary>  
@@ -65,12 +64,7 @@ namespace Tools
                 ex.ToString();
             }
         }
-
-        private void ThreadFunc(object param)
-        {
-
-        }
-
+        
         //...
 
     }

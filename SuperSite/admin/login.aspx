@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="SuperSite.admin.login" %>
-
 <%@ Register Src="~/admin/control/langlabel.ascx" TagPrefix="cc" TagName="label" %>
 
 <!DOCTYPE html>
@@ -47,41 +46,37 @@
             </div>
         </div>
         <div class="login-right">
-            <!--<h1 class="login-title">管理员登录</h1>-->
-            <h1 class="login-title"></h1>
+            <h1 class="login-title"><%--管理员登录--%></h1>
             <div>
                 <form id="myform">
                     <p>
                         <cc:label runat="server" ID="username" />
-                        <input type="text" class="text" name="name" value="" autocomplete="off" validate="emptyaccount" />
+                        <input type="text" class="text" name="name" autocomplete="off" validate="emptyaccount" />
                     </p>
                     <p>
                         <cc:label runat="server" ID="pwd" />
                         <input type="password" class="text" name="pwd" validate="emptypassword" />
                     </p>
+                    <%if(SystemInfo.LoginValidate){ %>
                     <p class="login-code">
                         <cc:label runat="server" ID="vcode" />
                         <input name="code" type="text" class="text vcode" id="code" maxlength="4" autocomplete="off" validate="emptyvalidatecode" />
                         <img id="imgcode" align="absbottom" src="control/validatecode.ashx" style="cursor: pointer;" title="点击刷新验证码" />
                     </p>
+                    <%} %>
                     <p class="login-submit">
-                        <input type="button" id="btnlogin" value="登录" avoidfrequent="" />
+                        <input type="button" id="btnlogin" value="登录" />
                     </p>
                 </form>
             </div>
         </div>
         <div class="clear"></div>
     </div>
-    <div class="footer" style="margin-top: 400px; display: block!important;">Powered by <b><a href="http://www.id124.com" target="_blank">艾德创意工作室 </a></b>&copy;2015-2016 &nbsp;<a href="http://www.id124.com" target="_blank">id124.com</a></div>
-
-    <!--[if IE 6]>
-    <script src="images/js/IE6-png.js" type="text/javascript"></script>
-    <script type="text/javascript">DD_belatedPNG.fix('.bg,img');</script>
-    <![endif]-->
+    <%=SystemCopyRight() %>
+    
     <script type="text/javascript" src="statics/base/js/jquery1.7.2.js"></script>
     <script type="text/javascript" src="statics/base/js/lang/message-lang-<%=CurrentLanguage.ToString() %>.js"></script>
     <script type="text/javascript" src="statics/base/js/common.js"></script>
-    <script type="text/javascript" src="statics/base/js/app.js"></script>
-    <script type="text/javascript">var globalRequestUrl = '<%=GlobalAjaxRequestUrl%>'; loginModel.init();</script>
+    <script type="text/javascript" src="statics/base/js/app.login.js"></script>
 </body>
 </html>

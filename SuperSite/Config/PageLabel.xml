@@ -10,10 +10,10 @@
   <index>
     <!--top-->
     <item id="navigation" zhcn="快捷导航" zhtw="快捷導航" en="Navigation" type="p" />
-    <item id="message" zhcn="消息管理" zhtw="消息管理" en="Message" type="p" />
+    <item id="content" zhcn="内容管理" zhtw="內容管理" en="Content" type="p" />
     <item id="plugin" zhcn="插件设置" zhtw="挿件設定" en="Plugin" type="p" />
-    <item id="statistics" zhcn="推送统计" zhtw="推送統計" en="Statistics" type="p" />
-    <item id="setting" zhcn="推送配置" zhtw="推送配寘" en="Setting" type="p" />
+    <item id="statistics" zhcn="报表统计" zhtw="報表統計" en="Statistics" type="p" />
+    <item id="setting" zhcn="系统设置" zhtw="系統設置" en="Setting" type="p" />
     
     <item id="hello" zhcn="您好" zhtw="您好" en="Hello" />
     <item id="quite" zhcn="退出" zhtw="退出" en="Sign out" />

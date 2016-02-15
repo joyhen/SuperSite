@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace SuperSite.admin.ajax
 {
     using Config;
     using Tools;
     using Model.Arg;
+    using Model.DTO;
 
     public partial class requestaction
     {
@@ -19,10 +21,13 @@ namespace SuperSite.admin.ajax
                 return;
             }
 
-            if (argdata.code != GetSession(KeyCenter.KeyValidateCodeSession))
+            if (SystemInfo.LoginValidate)
             {
-                Outmsg("验证码错误");
-                return;
+                if (argdata.code != GetSession(KeyCenter.KeyValidateCodeSession))
+                {
+                    Outmsg("验证码错误");
+                    return;
+                }
             }
 
             var serverdata = new Server.LoginService().UserLogin(argdata.name, argdata.pwd);
@@ -79,7 +84,7 @@ namespace SuperSite.admin.ajax
             if (string.IsNullOrWhiteSpace(haslogin.ToString())) Outmsg("您尚未登录");
 
             var qinfo = Encrypt.DESDecrypt(haslogin);
-            if (!IsNotEmptyString(qinfo)) Outmsg("您尚未登录");
+            if (!NotEmptyString(qinfo)) Outmsg("您尚未登录");
 
             var checkarr = qinfo.Split('$');
             if (checkarr.Length != 2) Outmsg("您尚未登录");
@@ -103,7 +108,36 @@ namespace SuperSite.admin.ajax
 
             //用户信息加密后写到缓存中（需要考虑缓存同步的问题）
             Session[KeyCenter.KeyUserLoginNameSession] = user.UserName;
-            CookiesHelp.SetCookie(KeyCenter.KeyCookiesLoginUserName, JsonUtils.JsonSerializer(user));
+            CookiesHelp.SetCookie(KeyCenter.KeyCookiesLoginUserName, JsonUtils.JsonSerializer(user), expiresDays: 1);
+            SetLoginRecord(user.UserName, user.RealName);
+        }
+
+        /// <summary>
+        /// 记录登录信息
+        /// </summary>
+        private void SetLoginRecord(string username, string realname)
+        {
+            var filename = DateTime.Now.ToString("yyyyMM") + KeyCenter.KeyLoginRecordFile;
+            var record = BufHelp.ProtoBufDeserialize<List<DLoginRecord>>(filename);
+
+            record = record ?? new List<DLoginRecord>();
+            record.Add(new DLoginRecord
+            {
+                UserName = username,
+                RealName = realname,
+                LoginTime = DateTime.Now,
+                LoginIp = Request.UserHostAddress, //Tools.IPHelp.ClientIP,
+                Location = "", //调用api获取...
+                ClientInfo = new ClientInfo
+                {
+                    browser = Request.Browser.Browser + "-" + Request.Browser.Version,
+                    platform = Request.Browser.Platform,
+                    iscookies = Request.Browser.Cookies,
+                    rawurl = Request.UrlReferrer.ToString()
+                }
+            });
+
+            BufHelp.ProtoBufSerialize<List<DLoginRecord>>(record, filename);
         }
 
         //...

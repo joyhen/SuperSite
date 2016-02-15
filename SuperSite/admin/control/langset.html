@@ -9,13 +9,11 @@
         #myform {
             min-height: 145px;
         }
-
             #myform ul {
                 width: 100%;
                 margin: 0;
                 padding: 0;
             }
-
                 #myform ul li {
                     width: 30%;
                     float: left;
@@ -88,14 +86,14 @@
                 if ($(this).attr('achieve') == 'ok') {
                     $(this).addClass('liselectlang').siblings().removeClass('liselectlang');
                 } else {
-                    parent.layer.msg('此语言尚未支持!');
+                    parent.layer.msg('此语言尚未支持', { time: 1500 });
                 }
             });
 
             $('#btnselect').on('click', function () {
                 var _li = $('li.liselectlang');
                 if (_li.length == 0) {
-                    parent.layer.msg('请选择您要设定的语言');
+                    parent.layer.msg('请选择您要设定的语言', { time: 1500 });
                     return;
                 }
 

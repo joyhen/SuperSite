@@ -7,11 +7,11 @@ namespace SuperSite.admin.control
         /// <summary>
         /// 输出的html标签
         /// </summary>
-        protected string renderhtml = "";
+        protected string RenderHtml = "";
         /// <summary>
         /// 标签内容
         /// </summary>
-        private string txt = "unknown label";
+        private string txt = "unknown";
 
         protected override void OnPreRender(EventArgs e)
         {
@@ -25,18 +25,19 @@ namespace SuperSite.admin.control
             {
                 if (Language != null)
                 {
-                    var showtxt = Language.LanguageList.GetCurrentLan(base.CurrentLanguage);
+                    var showtxt = Language.LanguageList.GetCurrentLan(CurrentLanguage);
                     if (!string.IsNullOrWhiteSpace(showtxt))
                         txt = showtxt;
                 }
 
                 if (RenderHtmlType == RenderType.@null)
-                    renderhtml = string.Format("{0}", txt);
+                    RenderHtml = string.Format("{0}", txt);
                 else
                 {
                     //需要改进此方法...
-                    var template = "<{0} ccvalue=\"{2}\">{1}</{0}>";
-                    renderhtml = string.Format(template, RenderHtmlType.ToString(), txt, "test value");
+                    var td = "val" + DateTime.Now.Ticks.ToString();
+                    var template = "<{0} ccvalue=\"{2}\" cctag=\"{2}\">{1}</{0}>";
+                    RenderHtml = string.Format(template, RenderHtmlType.ToString(), txt, td);
                 }
             }
         }

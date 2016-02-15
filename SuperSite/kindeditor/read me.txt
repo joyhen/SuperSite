@@ -1,0 +1,188 @@
+﻿
+version: 4.1.10
+https://github.com/kindsoft/kindeditor/blob/master/kindeditor-all.js
+
+http://kindeditor.net/demo.php
+http://kindeditor.net/doc.php
+http://kindeditor.net/doc3.php?cmd=config //编辑器初始化参数
+http://kindeditor.net/docs/editor.html    //编辑器(Editor) API
+
+配置编辑器的工具栏，其中"-"或"/"表示换行，"|"表示分隔符。
+http://kindeditor.net/docs/option.html
+数据类型: Array
+默认值:
+[
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'about'
+]
+source	HTML代码
+preview	预览
+undo	后退
+redo	前进
+cut	剪切
+copy	复制
+paste	粘贴
+plainpaste	粘贴为无格式文本
+wordpaste	从Word粘贴
+selectall	全选
+justifyleft	左对齐
+justifycenter	居中
+justifyright	右对齐
+justifyfull	两端对齐
+insertorderedlist	编号
+insertunorderedlist	项目符号
+indent	增加缩进
+outdent	减少缩进
+subscript	下标
+superscript	上标
+formatblock	段落
+fontname	字体
+fontsize	文字大小
+forecolor	文字颜色
+hilitecolor	文字背景
+bold	粗体
+italic	斜体
+underline	下划线
+strikethrough	删除线
+removeformat	删除格式
+image	图片
+flash	Flash
+media	视音频
+table	表格
+hr	插入横线
+emoticons	插入表情
+link	超级链接
+unlink	取消超级链接
+fullscreen	全屏显示
+about	关于
+print	打印
+code	插入程序代码
+map	Google地图
+baidumap	百度地图
+lineheight	行距
+clearhtml	清理HTML代码
+pagebreak	插入分页符
+quickformat	一键排版
+insertfile	插入文件
+template	插入模板
+anchor	插入锚点
+
+
+<link href="../kindeditor/themes/default/default.css" rel="stylesheet" />
+
+<script src="../kindeditor/examples/jquery-1.8.0.min.js"></script>
+<script src="../kindeditor/kindeditor-min.js"></script>
+<script src="../kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //定义编辑器对象
+        var editor;
+        //实例化编辑器
+        editor = KindEditor.create('textarea[name="content"]', {
+            //pasteType: 0,         //0禁止,1纯文本,2HTML
+            //urlType : 'relative', //相对URLrelative, 绝对URLabsolute, 绝对URL（包含域名）domain
+            //filterMode : false,   //KindEditor 默认采用白名单过滤方式，htmlTags 参数定义要保留的标签和属性。用 filterMode 参数关闭过滤模式。
+            //newlineTag: 'br',     //br换行, p换行（默认值: “p”）
+            //langType : 'zh_CN'    //en(English), zh_CN(简体中文), zh_TW(繁體中文), ko(Korean), ar(Arabic)
+            //afterChange : function() {
+            //    K('.word_count1').html(this.count());       //（字数统计包含HTML代码。）
+            //    K('.word_count2').html(this.count('text')); //（字数统计包含纯文本、IMG、EMBED，不包含换行符，IMG和EMBED算一个文字。）
+            //},
+
+            //精简模式
+            resizeType: 1, //2或1或0，2时可以拖动改变宽度和高度，1时只能改变高度，0时不能拖动
+            allowPreviewEmoticons : false,
+            allowImageUpload : false,
+            items : [
+                'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                'insertunorderedlist', '|', 'emoticons', 'image', 'link', 'fullscreen'],
+
+            //加载自动高度插件（注意：与fullscreen效果有bug，返回全屏时候编辑器的高度会变高）
+            autoHeightMode: true,
+            afterCreate: function () {
+                this.loadPlugin('autoheight');
+            }
+        });
+
+        //if (editor) {
+        //    editor.remove();
+        //    editor = null;
+        //}
+        //editor.readonly();      //设置只读模式
+        //editor.readonly(false); //取消只读状态
+
+        ////异步加载编辑器（异步加载的时候，样式表和js可以不引用）
+        //$('input[name=load]').click(function () {
+        //    $.getScript('../kindeditor/kindeditor-min.js', function () {
+        //        KindEditor.basePath = '../kindeditor/';
+        //        KindEditor.create('textarea[name="content"]');
+        //    });
+        //});
+        ////删除编辑器
+        //$('input[name=remove]').click(function () {
+        //    KindEditor.remove('textarea[name="content"]');
+        //});
+
+
+        //...
+
+    });
+</script>
+
+//基本操作
+<p>
+    <input type="button" name="getHtml" value="取得HTML" />
+    <input type="button" name="isEmpty" value="判断是否为空" />
+    <input type="button" name="getText" value="取得文本(包含img,embed)" />
+    <input type="button" name="selectedHtml" value="取得选中HTML" />
+    <br />
+    <br />
+    <input type="button" name="setHtml" value="设置HTML" />
+    <input type="button" name="setText" value="设置文本" />
+    <input type="button" name="insertHtml" value="插入HTML" />
+    <input type="button" name="appendHtml" value="添加HTML" />
+    <input type="button" name="clear" value="清空内容" />
+    <input type="reset" name="reset" value="Reset" />
+</p>
+K('input[name=getHtml]').click(function(e) {
+	alert(editor.html());
+});
+K('input[name=isEmpty]').click(function(e) {
+	alert(editor.isEmpty());
+});
+K('input[name=getText]').click(function(e) {
+	alert(editor.text());
+});
+K('input[name=selectedHtml]').click(function(e) {
+	alert(editor.selectedHtml());
+});
+K('input[name=setHtml]').click(function(e) {
+	editor.html('<h3>Hello KindEditor</h3>');
+});
+K('input[name=setText]').click(function(e) {
+	editor.text('<h3>Hello KindEditor</h3>');
+});
+K('input[name=insertHtml]').click(function(e) {
+	editor.insertHtml('<strong>插入HTML</strong>');
+});
+K('input[name=appendHtml]').click(function(e) {
+	editor.appendHtml('<strong>添加HTML</strong>');
+});
+K('input[name=clear]').click(function(e) {
+	editor.html('');
+});
+
+
+
+var editor = K.editor({
+	uploadJson: '../asp.net/upload_json.ashx',
+	fileManagerJson: '../asp.net/file_manager_json.ashx',
+	allowFileManager : true
+});

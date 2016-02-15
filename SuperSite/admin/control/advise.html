@@ -12,10 +12,11 @@
             <div class="boxcont ">
                 <input name="id" type="hidden" value="1" />
                 <div class="authdivinput">
-                    <input name="authpass" class="text nonull" placeholder="标题" per="1" value="" />
+                    <input name="authpass" validate class="text nonull" placeholder="标题" per="1" value="" />
                 </div>
                 <div class="authdivinput">
-                    <textarea name="authcode" rows="5" spellcheck="false" class="textarea nonull" placeholder="内容" per="1"></textarea>
+                    <textarea name="authcode" validate rows="5" spellcheck="false" 
+                        class="textarea nonull" placeholder="内容" per="1"></textarea>
                 </div>
                 <div class="authsubmit">
                     <input type="button" name="btnsend" value="发送" class="submit" />
@@ -24,5 +25,18 @@
             </div>
         </div>
     </div>
+
+    <script src="../statics/base/js/jquery1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.submit').click(function () {
+                var $targetdom = $('input[validate],textarea[validate]');
+                if (!parent.checkInput($targetdom, 'advise', null, true)) return;
+
+                //...
+
+            });
+        });
+    </script>
 </body>
 </html>

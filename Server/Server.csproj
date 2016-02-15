@@ -39,8 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseADOService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Business\Sql.cs" />
+    <Compile Include="CategoryService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="NoticeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

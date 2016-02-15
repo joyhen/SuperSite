@@ -8,7 +8,7 @@
                 <div class="top-r-t">
                     <ol class="rnav">
                         <li class="list"><cc:label runat="server" ID="hello" />
-                            <a href="admin_edit.html" id="mydata" target="main" class='tui'>周志龙</a>
+                            <a href="sysuseredit.aspx?id=<%=CurrentUser.Id %>" target="main" class='tui'><%=CurrentUser.RealName %></a>
                         </li>
                         <li class="line">|</li>
                         <li class="list">
@@ -38,10 +38,10 @@
                     <li id="metnav_10" class="list">
                         <a href="javascript:;" id="nav_10" hidefocus="true">
                             <span class="c2"></span>
-                            <cc:label runat="server" ID="message" />
+                            <cc:label runat="server" ID="content" />
                         </a>
                     </li>
-                    <li id="metnav_37" class="list">
+                    <%--<li id="metnav_37" class="list">
                         <a href="javascript:;" id="nav_37" hidefocus="true">
                             <span class="c3"></span>
                             <cc:label runat="server" ID="plugin" />
@@ -52,7 +52,7 @@
                             <span class="c4"></span>
                             <cc:label runat="server" ID="statistics" />
                         </a>
-                    </li>
+                    </li>--%>
                     <li id="metnav_20" class="list">
                         <a href="javascript:;" id="nav_20" hidefocus="true">
                             <span class="c5"></span>
@@ -64,8 +64,8 @@
         </div>
     </div>
     <div class="floatl">
-        <a href="javascript:;" hidefocus="true" id="met_logo">
-            <img src="statics/base/images/logoen.gif" alt="携银网移动端推送平台" title="携银网移动端推送平台" />
+        <a href="http://www.id124.com" target="_blank" hidefocus="true" id="met_logo">
+            <img src="statics/base/images/logoen.gif" alt="超级网站管理平台" title="超级网站管理平台" />
         </a>
     </div>
 </div>

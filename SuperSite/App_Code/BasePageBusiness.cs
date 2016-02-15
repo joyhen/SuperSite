@@ -69,7 +69,7 @@ namespace SuperSite.App_Code
                 return;
 
             var modelName = GetRequestPageRenderLanguageModel();
-            if (!IsNotEmptyString(modelName)) return;
+            if (!NotEmptyString(modelName)) return;
 
             var querySource = GetPageLabelData(modelName);
 
@@ -100,7 +100,7 @@ namespace SuperSite.App_Code
                     }
                     catch (Exception ex)
                     {
-                        Tools.LogHelp.WriteLog("加载标签语言配置文件失败", ex);
+                        LogHelp.WriteLog("加载标签语言配置文件失败", ex);
                     }
                 }
 
@@ -117,7 +117,6 @@ namespace SuperSite.App_Code
 
             //当前已加载的标签缓存数据
             var cachedata = CacheUtil.GetCache(KeyCenter.KeyLanguageLabelCache) as Dictionary<string, List<LanguageLabel>>;
-
             if (cachedata != null)
             {
                 result = cachedata.FirstOrDefault(x => x.Key == langModelName).Value;
@@ -138,8 +137,10 @@ namespace SuperSite.App_Code
                     });
                 }
 
-                if (cachedata == null) cachedata = new Dictionary<string, List<LanguageLabel>>();
-
+                if (cachedata == null)
+                {
+                    cachedata = new Dictionary<string, List<LanguageLabel>>();
+                }
                 cachedata.Add(langModelName, result);   //添加到要缓存的数据对象
             }
 
@@ -154,7 +155,7 @@ namespace SuperSite.App_Code
         /// </summary>
         private BaseUserControl.RenderType GetLabelLang(string strlang)
         {
-            if (!IsNotEmptyString(strlang))
+            if (!NotEmptyString(strlang))
                 return BaseUserControl.RenderType.@null;
 
             return EnumUtils.GetEnumBuyStr<BaseUserControl.RenderType>(strlang);
@@ -188,7 +189,7 @@ namespace SuperSite.App_Code
             var arr = currentpage.Split('/');
             var result = arr[arr.Length - 1];
 
-            if (IsNotEmptyString(pageextend))
+            if (NotEmptyString(pageextend))
             {
                 return result.Replace(pageextend, "");
             }

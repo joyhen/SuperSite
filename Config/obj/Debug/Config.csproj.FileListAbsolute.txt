@@ -22,3 +22,11 @@ F:\github\SuperSite\Config\bin\Debug\Config.pdb
 F:\github\SuperSite\Config\obj\Debug\Config.csprojResolveAssemblyReference.cache
 F:\github\SuperSite\Config\obj\Debug\Config.dll
 F:\github\SuperSite\Config\obj\Debug\Config.pdb
+F:\jonopen\SuperSite\Config\bin\Debug\Config.dll
+F:\jonopen\SuperSite\Config\bin\Debug\Config.pdb
+F:\jonopen\SuperSite\Config\obj\Debug\Config.dll
+F:\jonopen\SuperSite\Config\obj\Debug\Config.pdb
+F:\business\SuperSite\Config\bin\Debug\Config.dll
+F:\business\SuperSite\Config\bin\Debug\Config.pdb
+F:\business\SuperSite\Config\obj\Debug\Config.dll
+F:\business\SuperSite\Config\obj\Debug\Config.pdb

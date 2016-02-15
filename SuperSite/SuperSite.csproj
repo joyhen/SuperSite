@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -58,28 +59,41 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
-    </Reference>
-    <Reference Include="TinyMapper">
-      <HintPath>..\packages\TinyMapper.2.0.8\lib\net40\TinyMapper.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\advert.aspx" />
+    <Content Include="admin\advertadd.aspx" />
+    <Content Include="admin\advertedit.aspx" />
+    <Content Include="admin\adverttype.aspx" />
+    <Content Include="admin\adverttypeadd.aspx" />
+    <Content Include="admin\adverttypeedit.aspx" />
     <Content Include="admin\ajax\requestaction.aspx" />
+    <Content Include="admin\case.aspx" />
+    <Content Include="admin\category.aspx" />
+    <Content Include="admin\categoryadd.aspx" />
+    <Content Include="admin\categoryedit.aspx" />
+    <Content Include="admin\content.html" />
     <Content Include="admin\control\advise.html" />
+    <Content Include="admin\control\previewcategory.html" />
     <Content Include="admin\control\langlabel.ascx" />
     <Content Include="admin\control\langset.html" />
     <Content Include="admin\control\maintop.ascx" />
     <Content Include="admin\control\navigation.html" />
     <Content Include="admin\control\Paging.ascx" />
+    <Content Include="admin\frienlink.aspx" />
+    <Content Include="admin\frienlinkadd.aspx" />
+    <Content Include="admin\frienlinkedit.aspx" />
+    <Content Include="admin\guestbook.aspx" />
     <Content Include="admin\index.aspx" />
     <Content Include="admin\login.aspx" />
     <Content Include="admin\loginout.aspx" />
     <Content Include="admin\main.html" />
-    <Content Include="admin\noticemsg.aspx" />
+    <Content Include="admin\news.aspx" />
     <Content Include="admin\noticetype.aspx" />
     <Content Include="admin\noticetype_add.aspx" />
+    <Content Include="admin\product.aspx" />
+    <Content Include="admin\recycle.aspx" />
+    <Content Include="admin\sitesetting.aspx" />
     <Content Include="admin\statics\base\css\common.css" />
     <Content Include="admin\statics\base\css\iframe.css" />
     <Content Include="admin\statics\base\css\metinfo.css" />
@@ -290,217 +304,26 @@
     <Content Include="admin\statics\base\images\_d.gif" />
     <Content Include="admin\statics\base\images\_l.gif" />
     <Content Include="admin\statics\base\images\_r.gif" />
-    <Content Include="admin\statics\base\js\app.js" />
+    <Content Include="admin\statics\base\js\app.sysuser.js" />
     <Content Include="admin\statics\base\js\common.js" />
-    <Content Include="admin\statics\base\js\cookie.js" />
-    <Content Include="admin\statics\base\js\html5.js" />
-    <Content Include="admin\statics\base\js\IE6-png.js" />
+    <Content Include="admin\statics\base\js\app.index.js" />
+    <Content Include="admin\statics\base\js\app.login.js" />
+    <Content Include="admin\statics\lib\cookie.js" />
+    <Content Include="admin\statics\lib\html5.js" />
+    <Content Include="admin\statics\lib\IE6-png.js" />
     <Content Include="admin\statics\base\js\jquery1.7.2.js" />
     <Content Include="admin\statics\base\js\lang\message-lang-en.js" />
     <Content Include="admin\statics\base\js\lang\message-lang-zhcn.js" />
     <Content Include="admin\statics\base\js\lang\message-lang-zhtw.js" />
-    <Content Include="admin\statics\base\js\metinfo.js" />
-    <Content Include="admin\statics\lib\kind\attached\image\20150311\20150311131435_21895.jpg" />
-    <Content Include="admin\statics\lib\kind\kindeditor-all-min.js" />
-    <Content Include="admin\statics\lib\kind\kindeditor-all.js" />
-    <Content Include="admin\statics\lib\kind\kindeditor-min.js" />
-    <Content Include="admin\statics\lib\kind\kindeditor.js" />
-    <Content Include="admin\statics\lib\kind\lang\ar.js" />
-    <Content Include="admin\statics\lib\kind\lang\en.js" />
-    <Content Include="admin\statics\lib\kind\lang\ko.js" />
-    <Content Include="admin\statics\lib\kind\lang\zh_CN.js" />
-    <Content Include="admin\statics\lib\kind\lang\zh_TW.js" />
-    <Content Include="admin\statics\lib\kind\plugins\anchor\anchor.js" />
-    <Content Include="admin\statics\lib\kind\plugins\autoheight\autoheight.js" />
-    <Content Include="admin\statics\lib\kind\plugins\baidumap\baidumap.js" />
-    <Content Include="admin\statics\lib\kind\plugins\baidumap\index.html" />
-    <Content Include="admin\statics\lib\kind\plugins\baidumap\map.html" />
-    <Content Include="admin\statics\lib\kind\plugins\clearhtml\clearhtml.js" />
-    <Content Include="admin\statics\lib\kind\plugins\code\code.js" />
-    <Content Include="admin\statics\lib\kind\plugins\code\prettify.css" />
-    <Content Include="admin\statics\lib\kind\plugins\code\prettify.js" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\emoticons.js" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\0.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\1.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\10.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\100.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\101.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\102.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\103.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\104.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\105.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\106.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\107.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\108.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\109.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\11.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\110.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\111.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\112.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\113.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\114.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\115.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\116.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\117.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\118.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\119.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\12.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\120.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\121.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\122.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\123.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\124.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\125.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\126.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\127.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\128.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\129.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\13.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\130.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\131.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\132.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\133.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\134.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\14.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\15.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\16.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\17.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\18.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\19.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\2.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\20.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\21.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\22.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\23.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\24.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\25.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\26.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\27.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\28.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\29.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\3.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\30.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\31.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\32.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\33.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\34.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\35.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\36.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\37.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\38.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\39.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\4.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\40.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\41.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\42.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\43.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\44.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\45.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\46.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\47.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\48.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\49.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\5.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\50.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\51.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\52.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\53.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\54.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\55.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\56.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\57.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\58.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\59.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\6.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\60.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\61.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\62.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\63.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\64.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\65.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\66.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\67.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\68.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\69.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\7.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\70.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\71.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\72.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\73.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\74.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\75.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\76.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\77.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\78.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\79.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\8.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\80.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\81.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\82.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\83.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\84.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\85.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\86.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\87.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\88.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\89.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\9.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\90.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\91.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\92.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\93.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\94.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\95.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\96.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\97.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\98.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\99.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\emoticons\images\static.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\filemanager.js" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\images\file-16.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\images\file-64.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\images\folder-16.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\images\folder-64.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\filemanager\images\go-up.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\flash\flash.js" />
-    <Content Include="admin\statics\lib\kind\plugins\image\image.js" />
-    <Content Include="admin\statics\lib\kind\plugins\image\images\align_left.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\image\images\align_right.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\image\images\align_top.gif" />
-    <Content Include="admin\statics\lib\kind\plugins\image\images\refresh.png" />
-    <Content Include="admin\statics\lib\kind\plugins\insertfile\insertfile.js" />
-    <Content Include="admin\statics\lib\kind\plugins\lineheight\lineheight.js" />
-    <Content Include="admin\statics\lib\kind\plugins\link\link.js" />
-    <Content Include="admin\statics\lib\kind\plugins\map\map.html" />
-    <Content Include="admin\statics\lib\kind\plugins\map\map.js" />
-    <Content Include="admin\statics\lib\kind\plugins\media\media.js" />
-    <Content Include="admin\statics\lib\kind\plugins\multiimage\images\image.png" />
-    <Content Include="admin\statics\lib\kind\plugins\multiimage\images\select-files-en.png" />
-    <Content Include="admin\statics\lib\kind\plugins\multiimage\images\select-files-zh_CN.png" />
-    <Content Include="admin\statics\lib\kind\plugins\multiimage\images\swfupload.swf" />
-    <Content Include="admin\statics\lib\kind\plugins\multiimage\multiimage.js" />
-    <Content Include="admin\statics\lib\kind\plugins\pagebreak\pagebreak.js" />
-    <Content Include="admin\statics\lib\kind\plugins\plainpaste\plainpaste.js" />
-    <Content Include="admin\statics\lib\kind\plugins\preview\preview.js" />
-    <Content Include="admin\statics\lib\kind\plugins\quickformat\quickformat.js" />
-    <Content Include="admin\statics\lib\kind\plugins\table\table.js" />
-    <Content Include="admin\statics\lib\kind\plugins\template\html\1.html" />
-    <Content Include="admin\statics\lib\kind\plugins\template\html\2.html" />
-    <Content Include="admin\statics\lib\kind\plugins\template\html\3.html" />
-    <Content Include="admin\statics\lib\kind\plugins\template\template.js" />
-    <Content Include="admin\statics\lib\kind\plugins\wordpaste\wordpaste.js" />
-    <Content Include="admin\statics\lib\kind\themes\common\anchor.gif" />
-    <Content Include="admin\statics\lib\kind\themes\common\blank.gif" />
-    <Content Include="admin\statics\lib\kind\themes\common\flash.gif" />
-    <Content Include="admin\statics\lib\kind\themes\common\loading.gif" />
-    <Content Include="admin\statics\lib\kind\themes\common\media.gif" />
-    <Content Include="admin\statics\lib\kind\themes\common\rm.gif" />
-    <Content Include="admin\statics\lib\kind\themes\default\background.png" />
-    <Content Include="admin\statics\lib\kind\themes\default\default.css" />
-    <Content Include="admin\statics\lib\kind\themes\default\default.png" />
-    <Content Include="admin\statics\lib\kind\themes\qq\editor.gif" />
-    <Content Include="admin\statics\lib\kind\themes\qq\qq.css" />
-    <Content Include="admin\statics\lib\kind\themes\simple\simple.css" />
+    <Content Include="admin\statics\lib\jpage\css\animate.css" />
+    <Content Include="admin\statics\lib\jpage\css\jPages.css" />
+    <Content Include="admin\statics\lib\jpage\img\back.gif" />
+    <Content Include="admin\statics\lib\jpage\img\next.gif" />
+    <Content Include="admin\statics\lib\jpage\img\preload.png" />
+    <Content Include="admin\statics\lib\jpage\jPages.js" />
+    <Content Include="admin\statics\lib\jpage\jPages.min.js" />
+    <Content Include="admin\statics\lib\jpage\jquery.lazyload.js" />
+    <Content Include="admin\statics\lib\jquery-1.11.0.min.js" />
     <Content Include="admin\statics\lib\layer-v2.0\demo.html" />
     <Content Include="admin\statics\lib\layer-v2.0\demo.txt" />
     <Content Include="admin\statics\lib\layer-v2.0\layer API 帮助文档.html" />
@@ -535,88 +358,288 @@
     <Content Include="admin\statics\lib\my97\skin\whyGreen\img.gif" />
     <Content Include="admin\statics\lib\my97\WdatePicker.js" />
     <Content Include="admin\statics\lib\parseUri.1.2.2.js" />
+    <Content Include="admin\statics\lib\poshytip-1.2\jquery.poshytip.min.js" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-twitter\tip-twitter.css" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-twitter\tip-twitter_arrows.gif" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-violet\tip-violet.css" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-violet\tip-violet.png" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-violet\tip-violet_arrows.png" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-yellowsimple\tip-yellowsimple.css" />
+    <Content Include="admin\statics\lib\poshytip-1.2\tip-yellowsimple\tip-yellowsimple_arrows.gif" />
     <Content Include="admin\statics\lib\qrcodejs\index-svg.html" />
     <Content Include="admin\statics\lib\qrcodejs\index.html" />
     <Content Include="admin\statics\lib\qrcodejs\index.svg" />
     <Content Include="admin\statics\lib\qrcodejs\jquery.min.js" />
     <Content Include="admin\statics\lib\qrcodejs\qrcode.js" />
     <Content Include="admin\statics\lib\qrcodejs\qrcode.min.js" />
-    <Content Include="admin\statics\lib\ufinder\dialogs\lookcode\lookcode.js" />
-    <Content Include="admin\statics\lib\ufinder\dialogs\lookimage\lookimage.js" />
-    <Content Include="admin\statics\lib\ufinder\index.html" />
-    <Content Include="admin\statics\lib\ufinder\lang\zh-cn\zh-cn.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\jquery-1.11.0.min.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\Uploader.swf" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.css" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.flashonly.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.flashonly.min.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.html5only.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.html5only.min.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.min.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.withoutimage.js" />
-    <Content Include="admin\statics\lib\ufinder\lib\webuploader\webuploader.withoutimage.min.js" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.exe" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.jpg" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.mp3" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.mp4" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1dir1\dir1dir1dir1dir1\dir1dir1dir1dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1dir1\dir1dir1dir1dir1\dir1dir1dir1dir1text2.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1dir1\dir1dir1dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1dir1\dir1dir1dir1text2.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1text0.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir1\dir1dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir2\dir1dir1dir1\dir1dir1dir1dir1\dir1dir1dir1dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir2\dir1dir1dir1\dir1dir1dir1dir1\dir1dir1dir1dir1text2.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir2\dir1dir1dir1\dir1dir1dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1dir2\dir1dir1dir1\dir1dir1dir1text2.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1text0.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\dir1text1.txt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\dir\sxcxc鏂板缓鏂囦欢.txt" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\button.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\buttonicon.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\colorpicker.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\combobox.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\comboboxmenu.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\dialog.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\dialogsize.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\file.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\finder.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\leaf.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\list.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\message.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\popup.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\separator.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\splitbutton.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\tab.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\tooltip.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\tree.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\css\ufinder.css" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\close.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\file-icons.gif" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\file-icons.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\icons.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\message-close.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\message-icon.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\toolbar-icons.gif" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\toolbar-icons.png" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\tree-icon.gif" />
-    <Content Include="admin\statics\lib\ufinder\themes\images\tree-icon.png" />
-    <Content Include="admin\statics\lib\ufinder\ufinder.config.js" />
-    <Content Include="admin\statics\lib\ufinder\ufinder.js" />
-    <Content Include="admin\statics\lib\ufinder\ufinder.min.js" />
+    <Content Include="admin\statics\tpt\main.txt" />
+    <Content Include="admin\supersiteinfo.aspx" />
+    <Content Include="admin\systemsetting.aspx" />
+    <Content Include="admin\sysuser.aspx" />
+    <Content Include="admin\sysuseradd.aspx" />
+    <Content Include="admin\sysuseredit.aspx" />
+    <Content Include="admin\temp.txt" />
+    <Content Include="admin\template\default\view.png" />
+    <Content Include="admin\theme.aspx" />
+    <Content Include="admin\ToolsPage.aspx" />
+    <Content Include="admin\video.aspx" />
     <Content Include="Config\Message.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Config\PageLabel.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Config\Site.xml" />
-    <Content Include="Config\System.xml" />
     <Content Include="Doc\read me.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="kindeditor\asp.net\bin\LitJSON.dll" />
+    <Content Include="kindeditor\asp.net\demo.aspx" />
+    <Content Include="kindeditor\asp.net\README.txt" />
+    <Content Include="kindeditor\bak\kindeditor-min.js" />
+    <Content Include="kindeditor\examples\auto-height.html" />
+    <Content Include="kindeditor\examples\colorpicker.html" />
+    <Content Include="kindeditor\examples\custom-plugin.html" />
+    <Content Include="kindeditor\examples\custom-theme.html" />
+    <Content Include="kindeditor\examples\default.html" />
+    <Content Include="kindeditor\examples\dialog.html" />
+    <Content Include="kindeditor\examples\dynamic-load.html" />
+    <Content Include="kindeditor\examples\file-dialog.html" />
+    <Content Include="kindeditor\examples\file-manager.html" />
+    <Content Include="kindeditor\examples\filter-mode.html" />
+    <Content Include="kindeditor\examples\image-dialog.html" />
+    <Content Include="kindeditor\examples\index.css" />
+    <Content Include="kindeditor\examples\index.html" />
+    <Content Include="admin\statics\lib\jquery-1.8.0.min.js" />
+    <Content Include="kindeditor\examples\jquery-ui.html" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.css" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="kindeditor\examples\jquery.html" />
+    <Content Include="kindeditor\examples\jquery.js" />
+    <Content Include="kindeditor\examples\multi-image-dialog.html" />
+    <Content Include="kindeditor\examples\multi-language.html" />
+    <Content Include="kindeditor\examples\newline.html" />
+    <Content Include="kindeditor\examples\node.html" />
+    <Content Include="kindeditor\examples\paste-type.html" />
+    <Content Include="kindeditor\examples\qqstyle.html" />
+    <Content Include="kindeditor\examples\readonly.html" />
+    <Content Include="kindeditor\examples\simple.html" />
+    <Content Include="kindeditor\examples\uploadbutton.html" />
+    <Content Include="kindeditor\examples\url-type.html" />
+    <Content Include="kindeditor\examples\word-count.html" />
+    <Content Include="kindeditor\kindeditor-all-min.js" />
+    <Content Include="kindeditor\kindeditor-min.js" />
+    <Content Include="kindeditor\lang\ar.js" />
+    <Content Include="kindeditor\lang\en.js" />
+    <Content Include="kindeditor\lang\ko.js" />
+    <Content Include="kindeditor\lang\zh_CN.js" />
+    <Content Include="kindeditor\lang\zh_TW.js" />
+    <Content Include="kindeditor\plugins\anchor\anchor.js" />
+    <Content Include="kindeditor\plugins\autoheight\autoheight.js" />
+    <Content Include="kindeditor\plugins\baidumap\baidumap.js" />
+    <Content Include="kindeditor\plugins\baidumap\index.html" />
+    <Content Include="kindeditor\plugins\baidumap\map.html" />
+    <Content Include="kindeditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="kindeditor\plugins\code\code.js" />
+    <Content Include="kindeditor\plugins\code\prettify.css" />
+    <Content Include="kindeditor\plugins\code\prettify.js" />
+    <Content Include="kindeditor\plugins\emoticons\emoticons.js" />
+    <Content Include="kindeditor\plugins\emoticons\images\0.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\1.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\10.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\100.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\101.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\102.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\103.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\104.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\105.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\106.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\107.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\108.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\109.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\11.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\110.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\111.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\112.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\113.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\114.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\115.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\116.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\117.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\118.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\119.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\12.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\120.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\121.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\122.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\123.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\124.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\125.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\126.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\127.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\128.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\129.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\13.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\130.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\131.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\132.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\133.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\134.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\14.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\15.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\16.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\17.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\18.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\19.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\2.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\20.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\21.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\22.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\23.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\24.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\25.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\26.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\27.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\28.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\29.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\3.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\30.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\31.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\32.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\33.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\34.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\35.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\36.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\37.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\38.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\39.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\4.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\40.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\41.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\42.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\43.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\44.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\45.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\46.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\47.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\48.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\49.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\5.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\50.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\51.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\52.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\53.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\54.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\55.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\56.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\57.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\58.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\59.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\6.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\60.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\61.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\62.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\63.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\64.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\65.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\66.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\67.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\68.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\69.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\7.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\70.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\71.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\72.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\73.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\74.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\75.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\76.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\77.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\78.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\79.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\8.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\80.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\81.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\82.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\83.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\84.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\85.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\86.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\87.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\88.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\89.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\9.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\90.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\91.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\92.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\93.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\94.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\95.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\96.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\97.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\98.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\99.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\static.gif" />
+    <Content Include="kindeditor\plugins\filemanager\filemanager.js" />
+    <Content Include="kindeditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="kindeditor\plugins\flash\flash.js" />
+    <Content Include="kindeditor\plugins\image\image.js" />
+    <Content Include="kindeditor\plugins\image\images\align_left.gif" />
+    <Content Include="kindeditor\plugins\image\images\align_right.gif" />
+    <Content Include="kindeditor\plugins\image\images\align_top.gif" />
+    <Content Include="kindeditor\plugins\image\images\refresh.png" />
+    <Content Include="kindeditor\plugins\insertfile\insertfile.js" />
+    <Content Include="kindeditor\plugins\lineheight\lineheight.js" />
+    <Content Include="kindeditor\plugins\link\link.js" />
+    <Content Include="kindeditor\plugins\map\map.html" />
+    <Content Include="kindeditor\plugins\map\map.js" />
+    <Content Include="kindeditor\plugins\media\media.js" />
+    <Content Include="kindeditor\plugins\multiimage\images\image.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="kindeditor\plugins\multiimage\multiimage.js" />
+    <Content Include="kindeditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="kindeditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="kindeditor\plugins\preview\preview.js" />
+    <Content Include="kindeditor\plugins\quickformat\quickformat.js" />
+    <Content Include="kindeditor\plugins\table\table.js" />
+    <Content Include="kindeditor\plugins\template\html\1.html" />
+    <Content Include="kindeditor\plugins\template\html\2.html" />
+    <Content Include="kindeditor\plugins\template\html\3.html" />
+    <Content Include="kindeditor\plugins\template\template.js" />
+    <Content Include="kindeditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="kindeditor\read me.txt" />
+    <Content Include="kindeditor\themes\common\anchor.gif" />
+    <Content Include="kindeditor\themes\common\blank.gif" />
+    <Content Include="kindeditor\themes\common\flash.gif" />
+    <Content Include="kindeditor\themes\common\loading.gif" />
+    <Content Include="kindeditor\themes\common\media.gif" />
+    <Content Include="kindeditor\themes\common\rm.gif" />
+    <Content Include="kindeditor\themes\default\background.png" />
+    <Content Include="kindeditor\themes\default\default.css" />
+    <Content Include="kindeditor\themes\default\default.png" />
+    <Content Include="kindeditor\themes\qq\editor.gif" />
+    <Content Include="kindeditor\themes\qq\qq.css" />
+    <Content Include="kindeditor\themes\simple\simple.css" />
     <Content Include="packages.config" />
     <Content Include="test.aspx" />
     <Content Include="Web.config" />
@@ -626,28 +649,6 @@
     <Content Include="admin\statics\lib\fonts\elephant.ttf" />
     <Content Include="admin\statics\lib\fonts\simkai.ttf" />
     <Content Include="admin\statics\lib\fonts\verdana.ttf" />
-    <Content Include="admin\statics\lib\kind\php\demo.php" />
-    <Content Include="admin\statics\lib\kind\php\file_manager_json.php" />
-    <Content Include="admin\statics\lib\kind\php\JSON.php" />
-    <Content Include="admin\statics\lib\kind\php\upload_json.php" />
-    <Content Include="admin\statics\lib\ufinder\server\config.php" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.apk" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.doc" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.ipa" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.md" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.pdf" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.php" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.ppt" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.rar" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.vsd" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.xls" />
-    <Content Include="admin\statics\lib\ufinder\server\files\a.zip" />
-    <Content Include="admin\statics\lib\ufinder\server\files\pers\nwnr" />
-    <Content Include="admin\statics\lib\ufinder\server\files\pers\nwr" />
-    <Content Include="admin\statics\lib\ufinder\server\files\pers\wnr" />
-    <Content Include="admin\statics\lib\ufinder\server\files\pers\wr" />
-    <Content Include="admin\statics\lib\ufinder\server\ufinder.php" />
-    <Content Include="admin\statics\lib\ufinder\server\Uploader.class.php" />
     <Content Include="admin\control\validatecode.ashx" />
     <Content Include="admin\statics\lib\qrcodejs\.gitignore" />
     <Content Include="admin\statics\lib\qrcodejs\bower.json" />
@@ -655,6 +656,9 @@
     <Content Include="admin\statics\lib\qrcodejs\README.md" />
     <Content Include="admin\statics\lib\jquery.serializeJSON.js" />
     <Content Include="admin\statics\base\images\psd\xiein push.psd" />
+    <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
+    <Content Include="kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="admin\statics\base\js\jquery-extend.js" />
     <None Include="Properties\PublishProfiles\Web.config.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -664,7 +668,55 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\advert.aspx.cs">
+      <DependentUpon>advert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\advert.aspx.designer.cs">
+      <DependentUpon>advert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\advertadd.aspx.cs">
+      <DependentUpon>advertadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\advertadd.aspx.designer.cs">
+      <DependentUpon>advertadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\advertedit.aspx.cs">
+      <DependentUpon>advertedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\advertedit.aspx.designer.cs">
+      <DependentUpon>advertedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adverttype.aspx.cs">
+      <DependentUpon>adverttype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adverttype.aspx.designer.cs">
+      <DependentUpon>adverttype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adverttypeadd.aspx.cs">
+      <DependentUpon>adverttypeadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adverttypeadd.aspx.designer.cs">
+      <DependentUpon>adverttypeadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adverttypeedit.aspx.cs">
+      <DependentUpon>adverttypeedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adverttypeedit.aspx.designer.cs">
+      <DependentUpon>adverttypeedit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\ajax\DTO.cs" />
+    <Compile Include="admin\ajax\Partialcategory.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajax\Partialsysusers.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="admin\ajax\Partialindex.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -674,12 +726,49 @@
     <Compile Include="admin\ajax\Partialnotice.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="admin\ajax\Partialprogram.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajax\Partialsetting.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ajax\Partialtemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="admin\ajax\requestaction.aspx.cs">
       <DependentUpon>requestaction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\ajax\requestaction.aspx.designer.cs">
       <DependentUpon>requestaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\case.aspx.cs">
+      <DependentUpon>case.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\case.aspx.designer.cs">
+      <DependentUpon>case.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\category.aspx.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\category.aspx.designer.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\categoryadd.aspx.cs">
+      <DependentUpon>categoryadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\categoryadd.aspx.designer.cs">
+      <DependentUpon>categoryadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\categoryedit.aspx.cs">
+      <DependentUpon>categoryedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\categoryedit.aspx.designer.cs">
+      <DependentUpon>categoryedit.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\control\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -710,6 +799,34 @@
     <Compile Include="admin\control\validatecode.ashx.cs">
       <DependentUpon>validatecode.ashx</DependentUpon>
     </Compile>
+    <Compile Include="admin\frienlink.aspx.cs">
+      <DependentUpon>frienlink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frienlink.aspx.designer.cs">
+      <DependentUpon>frienlink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frienlinkadd.aspx.cs">
+      <DependentUpon>frienlinkadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frienlinkadd.aspx.designer.cs">
+      <DependentUpon>frienlinkadd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frienlinkedit.aspx.cs">
+      <DependentUpon>frienlinkedit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frienlinkedit.aspx.designer.cs">
+      <DependentUpon>frienlinkedit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\guestbook.aspx.cs">
+      <DependentUpon>guestbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\guestbook.aspx.designer.cs">
+      <DependentUpon>guestbook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -731,12 +848,12 @@
     <Compile Include="admin\loginout.aspx.designer.cs">
       <DependentUpon>loginout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\noticemsg.aspx.cs">
-      <DependentUpon>noticemsg.aspx</DependentUpon>
+    <Compile Include="admin\news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\noticemsg.aspx.designer.cs">
-      <DependentUpon>noticemsg.aspx</DependentUpon>
+    <Compile Include="admin\news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\noticetype.aspx.cs">
       <DependentUpon>noticetype.aspx</DependentUpon>
@@ -751,6 +868,83 @@
     </Compile>
     <Compile Include="admin\noticetype_add.aspx.designer.cs">
       <DependentUpon>noticetype_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\recycle.aspx.cs">
+      <DependentUpon>recycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\recycle.aspx.designer.cs">
+      <DependentUpon>recycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sitesetting.aspx.cs">
+      <DependentUpon>sitesetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sitesetting.aspx.designer.cs">
+      <DependentUpon>sitesetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\supersiteinfo.aspx.cs">
+      <DependentUpon>supersiteinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\supersiteinfo.aspx.designer.cs">
+      <DependentUpon>supersiteinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\systemsetting.aspx.cs">
+      <DependentUpon>systemsetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\systemsetting.aspx.designer.cs">
+      <DependentUpon>systemsetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sysuser.aspx.cs">
+      <DependentUpon>sysuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysuser.aspx.designer.cs">
+      <DependentUpon>sysuser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sysuseradd.aspx.cs">
+      <DependentUpon>sysuseradd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysuseradd.aspx.designer.cs">
+      <DependentUpon>sysuseradd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sysuseredit.aspx.cs">
+      <DependentUpon>sysuseredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sysuseredit.aspx.designer.cs">
+      <DependentUpon>sysuseredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\theme.aspx.cs">
+      <DependentUpon>theme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\theme.aspx.designer.cs">
+      <DependentUpon>theme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ToolsPage.aspx.cs">
+      <DependentUpon>ToolsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ToolsPage.aspx.designer.cs">
+      <DependentUpon>ToolsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\video.aspx.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\video.aspx.designer.cs">
+      <DependentUpon>video.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\BasePageBusiness.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -776,8 +970,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="admin\statics\lib\ufinder\server\files\dir\鏂板缓鏂囦欢澶\" />
+    <Folder Include="admin\template\red\" />
     <Folder Include="App_Data\" />
+    <Folder Include="kindeditor\attached\" />
+    <Folder Include="upload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Config\Config.csproj">

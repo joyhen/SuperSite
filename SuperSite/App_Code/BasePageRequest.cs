@@ -112,7 +112,9 @@ namespace SuperSite.App_Code
             //{
             //    return GetActionHandlerInfo();
             //});
-            var queryRightAction = GetActionHandlerInfo();
+
+            //var queryRightAction = GetActionHandlerInfo();
+            var queryRightAction = GetActionHandlerInfo;
             if (queryRightAction == null || queryRightAction.Count == 0) Outmsg(false, "内部错误");
 
             var currentAction = queryRightAction.FirstOrDefault(x => x.ClientName == ClientAction);
@@ -168,23 +170,49 @@ namespace SuperSite.App_Code
         /// <summary>
         /// 获取系统所有ajax操作方法信息
         /// </summary>
-        private List<RightAction> GetActionHandlerInfo()
+        protected List<RightAction> GetActionHandlerInfo
         {
-            var action = new List<RightAction>();
-            action.Add(new RightAction { ActionName = "Login", CheckLogin = false });
-            action.Add(new RightAction { ActionName = "AnswerQuesion", CheckLogin = false });
-            action.Add(new RightAction { ActionName = "LanguageSet" });
+            get
+            {
+                var action = new List<RightAction>();
+                action.Add(new RightAction { ActionName = "Login", CheckLogin = false });
+                action.Add(new RightAction { ActionName = "AnswerQuesion", CheckLogin = false });
+                action.Add(new RightAction { ActionName = "GetLoginRecord" });
+                action.Add(new RightAction { ActionName = "LanguageSet" });
+                action.Add(new RightAction { ActionName = "ClearSystemCache" });
+                action.Add(new RightAction { ActionName = "UploadWebImg" });
 
-            action.Add(new RightAction { ActionName = "GetNoticeType" });
-            action.Add(new RightAction { ActionName = "AddNoticeType" });
-            
+                action.Add(new RightAction { ActionName = "GetNoticeType" });
+                action.Add(new RightAction { ActionName = "AddNoticeType" });
 
-            action.Add(new RightAction { ActionName = "GetMenu" });
-            action.Add(new RightAction { ActionName = "AddSysUser" });
 
-            //...
+                action.Add(new RightAction { ActionName = "GetMenu" });
 
-            return action;
+                action.Add(new RightAction { ActionName = "AddSysUser" });
+                action.Add(new RightAction { ActionName = "UpdateSysUser" });
+                action.Add(new RightAction { ActionName = "SetSysUserPwd" });
+                action.Add(new RightAction { ActionName = "GetSysUsers" });
+                action.Add(new RightAction { ActionName = "DeleteSysUser" });
+
+                action.Add(new RightAction { ActionName = "SaveSystemSetting" });
+                action.Add(new RightAction { ActionName = "SaveSiteSetting" });
+
+
+                action.Add(new RightAction { ActionName = "PreviewCategory" });
+                action.Add(new RightAction { ActionName = "GetCategory" });
+                action.Add(new RightAction { ActionName = "SetCategoryStatus" });
+                action.Add(new RightAction { ActionName = "SaveCategoryPage" });
+                action.Add(new RightAction { ActionName = "AddCategory" });
+                action.Add(new RightAction { ActionName = "UpdateCategory" });
+                action.Add(new RightAction { ActionName = "DeleteCategory" });
+
+                action.Add(new RightAction { ActionName = "SaveSuperProgramInfo" });
+                action.Add(new RightAction { ActionName = "GetSuperProgramInfo" });
+                
+                //...
+
+                return action;
+            }
         }
 
 

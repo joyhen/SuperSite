@@ -34,6 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,12 +48,27 @@
   <ItemGroup>
     <Compile Include="AjaxParama.cs" />
     <Compile Include="Arg\Interface\IAjaxArg.cs" />
+    <Compile Include="Arg\PArgCategoryPage.cs" />
+    <Compile Include="Arg\PArgCommon.cs" />
     <Compile Include="Arg\PArgNoticeType.cs" />
+    <Compile Include="Arg\PArgSiteSetting.cs" />
+    <Compile Include="Arg\PArgSuperProgramInfo.cs" />
+    <Compile Include="Arg\PArgSystemSetting.cs" />
+    <Compile Include="Arg\PArgSysUser.cs" />
+    <Compile Include="Arg\PArgUploadWebImg.cs" />
     <Compile Include="Arg\PArgUserLogin.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Arg\PArgCategory.cs" />
+    <Compile Include="DTO\DCategory.cs" />
+    <Compile Include="DTO\DLoginRecord.cs" />
+    <Compile Include="DTO\DSuperProgramInfo.cs" />
+    <Compile Include="DTO\DWebTemplate.cs" />
+    <Compile Include="Entity\Category.cs" />
     <Compile Include="DTO\DSiteSetting.cs" />
     <Compile Include="DTO\DSystemSetting.cs" />
     <Compile Include="DTO\DTip.cs" />
+    <Compile Include="DTO\KeyValue.cs" />
+    <Compile Include="DTO\MapCondition.cs" />
     <Compile Include="DTO\TransferModel.cs" />
     <Compile Include="DTO\TupleIntString.cs" />
     <Compile Include="Entity\BizNoticeType.cs" />

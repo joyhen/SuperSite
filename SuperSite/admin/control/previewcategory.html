@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>预览栏目</title>
+    <style type="text/css">
+        body{ font-family:Arial,'微软雅黑';}
+        ul,li{margin:0; padding:0; list-style-type:none;}
+        #content{ width:900px; margin:0 auto;}
+        #category{ width:100%;}
+        .mainmenu{float:left; width:120px; height:39px; line-height:39px; background-color:#fff; border-top:1px solid #fff; text-align:center;}
+        .mainmenuhover{border-top:1px solid #0C121C; background-color:#ddd;}
+        .mainmenu a{ text-decoration:none; color:#333;}
+        .mainmenu a:hover{ text-decoration:none;}
+
+        .childcategory{ display:none; background-color:#fff;}
+        .childcategorylihover {background-color:#eee;}
+    </style>
+</head>
+<body>
+    <div style="height:50px;"></div>
+    <div id="content">
+        <ul id="category">
+            <!--<li class="mainmenu">
+                <a href="">父栏目1</a>
+            </li>
+            <li class="mainmenu">
+                <a href="">父栏目2</a>
+                <ul class="childcategory">
+                    <li><a href="">子栏目1</a></li>
+                    <li><a href="">子栏目2</a></li>
+                    <li><a href="">子栏目3</a></li>
+                    <li><a href="">子栏目4</a></li>
+                </ul>
+            </li>
+            <li class="mainmenu">
+                <a href="">父栏目3</a>
+                <ul class="childcategory">
+                    <li><a href="">子栏目1</a></li>
+                    <li><a href="">子栏目2</a></li>
+                    <li><a href="">子栏目3</a></li>
+                    <li><a href="">子栏目4</a></li>
+                </ul>
+            </li>
+            <li class="mainmenu">
+                <a href="">父栏目4</a>
+                <ul class="childcategory">
+                    <li><a href="">子栏目1</a></li>
+                </ul>
+            </li>
+            <li class="mainmenu">
+                <a href="">父栏目5</a>
+            </li>-->
+        </ul>
+    </div>
+    <div style="clear:both;"></div>
+    <div style="margin-top:300px;">
+        <p style="text-align:center; font-size:14px; color:#ff6a00;"></p>
+    </div>
+
+    <script src="../statics/base/js/jquery1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#category").delegate(".mainmenu", "hover", function () {
+                $(this).toggleClass("mainmenuhover");
+                $(this).find('.childcategory').toggle();
+            });
+            $("#category").delegate(".childcategory li", "hover", function () {
+                $(this).toggleClass("childcategorylihover");
+            });
+            $("#category").delegate("a", "hover", function () {
+                $('p').html($(this).attr('href'));
+            });
+
+            parent.getJsonData({ action: "e3f19087955a8db4d4b0034779c34b4a" }, function (result) {
+                $('#category').html(result.data);
+            });
+
+            //...
+
+        });
+    </script>
+
+</body>
+</html>

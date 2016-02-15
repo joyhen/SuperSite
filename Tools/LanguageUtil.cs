@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
-
-namespace Tools
+﻿namespace Tools
 {
     using Config;
 
@@ -15,14 +10,14 @@ namespace Tools
         /// <summary>
         /// 当前系统语言
         /// </summary>
+        /// <remarks>默认中文</remarks>
         public static EnumCenter.Lang CurrentLanguage()
         {
             string lan = CookiesHelp.GetCookieValue(KeyCenter.KeyCurrentLangCookies);
             if (string.IsNullOrWhiteSpace(lan) || lan.Trim().Length == 0)
-                return EnumCenter.Lang.en;
+                return EnumCenter.Lang.zhcn;
 
-            EnumCenter.Lang elan = EnumUtils.GetEnumBuyStr<EnumCenter.Lang>(lan);
-            return elan;
+            return EnumUtils.GetEnumBuyStr<EnumCenter.Lang>(lan);
         }
 
         //...

@@ -7,3 +7,12 @@ F:\business\JonOpen\ThirdAPI\bin\Debug\ThirdAPI.dll
 F:\business\JonOpen\ThirdAPI\bin\Debug\ThirdAPI.pdb
 F:\business\JonOpen\ThirdAPI\obj\Debug\ThirdAPI.dll
 F:\business\JonOpen\ThirdAPI\obj\Debug\ThirdAPI.pdb
+F:\jonopen\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.dll
+F:\jonopen\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.pdb
+F:\jonopen\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.dll
+F:\jonopen\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.pdb
+F:\business\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.dll
+F:\business\SuperSite\ThirdAPI\bin\Debug\ThirdAPI.pdb
+F:\business\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.csprojResolveAssemblyReference.cache
+F:\business\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.dll
+F:\business\SuperSite\ThirdAPI\obj\Debug\ThirdAPI.pdb

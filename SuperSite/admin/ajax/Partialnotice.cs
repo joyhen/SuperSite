@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace SuperSite.admin.ajax
 {
-    using Config;
     using Tools;
+    using Config;
     using Model.Arg;
 
     public partial class requestaction

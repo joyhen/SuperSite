@@ -13,6 +13,10 @@ namespace SuperSite.admin
         {
             base.Page_Load(sender, e);
 
+            if (!IsPostBack)
+            {
+                this.maintop.CurrentUser = base.CurrentUser;
+            }
         }
 
         //...

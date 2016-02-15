@@ -6,7 +6,7 @@
 .v52fmbx_dlbox dl{ border-bottom:1px solid #ddd; margin:0px 0px;}
 .v52fmbx_mo dl{ border-bottom:0;}
 /*.v52fmbx dl dt{ float:left; padding:13px 5px 10px 10px; text-align:right; overflow:hidden; line-height:1.2;}*/
-.v52fmbx dl dt{ float:left; padding:13px 5px 10px 10px; text-align:right; overflow:hidden; line-height:1.2; min-width:80px;}
+.v52fmbx dl dt{ float:left; padding:13px 5px 10px 10px; text-align:right; overflow:hidden; line-height:1.2; min-width:100px;}
 /*.v52fmbx dl dd{ float:left; padding:10px 0px 10px 5px;}*/
 .v52fmbx dl dd{ float:left; padding:10px 0px 10px 5px; width:85%;}
 .v52fmbx dl dd label{ margin-right:10px; display:block; margin-bottom:3px;}
@@ -189,3 +189,39 @@ div.page_list{ text-align:center;}
     padding: 3px 5px;
     outline: none;
 }
+#loadtxt{ color:#333;}
+
+/*----------------------分页样式------------------------*/
+/*pub-2|2011-12-01 10:38:32*/
+
+.med-pagination {margin-top: 10px; margin-bottom:10px;}
+
+.med-pagination{clear:both;height:22px}
+.med-pagination em{color:#818181;float:left}
+.med-pagination ins{text-decoration:none;color:#989898;margin:0 0;float:left}
+.med-pagination ins input{width:30px;height:14px;border:1px solid #D4D4D4;margin:0 5px;vertical-align:middle;vertical-align:top\9}
+.med-pagination ins select{vertical-align:middle;vertical-align:top\9}
+.med-pagination .weight{font-weight:700}
+.med-pagination a{float:left;display:block;height:12px;padding:2px 4px 3px;line-height:12px;margin:0 2px;color:#6a9dcc;text-decoration:none;cursor:pointer;
+                  -webkit-border-radius:2px;border-radius:2px;-moz-border-radius:2px;margin-top:0;text-align:left}
+.med-pagination a:hover{border:1px solid #c3c3c3;padding:1px 3px 2px;text-decoration:none}
+.med-pagination a.current{border:1px solid #c3c3c3;padding:1px 3px 2px;background:rgba(229,229,229,.5);font-weight:700;color:#000!important}
+.med-pagination .prev,.med-pagination .prev-disabled,.med-pagination .next,.med-pagination .next-disabled{width:46px;line-height:130%\9;_line-height:12px}
+.med-pagination .first,.med-pagination .first-disabled,.med-pagination .last,.med-pagination .last-disabled{line-height:130%\9;_line-height:12px}
+.med-pagination .prev-disabled,.med-pagination .next-disabled,.med-pagination .first-disabled,.med-pagination .last-disabled{cursor:text;border-color:#D4D4D4!important;color:#D4D4D4!important}
+.med-pagination .prev-disabled:hover,.med-pagination .next-disabled:hover,.med-pagination .first-disabled:hover,.med-pagination .last-disabled:hover{border:0;padding:2px 4px 3px}
+.med-pagination .pages{float:right;overflow:hidden;zoom:1}
+.med-pagination .btn-jump{margin-left:3px;padding:1px 3px 2px;border:1px solid #c3c3c3;line-height:130%\9;_line-height:12px}
+.med-pagination .btn-jump:hover{background-color:#e5e5e5}.med-pagination .ml15{margin-left:15px}.med-pagination .ml3{margin-left:3px}
+.med-pagination .mr3{margin-right:3px}.med-pagination .ml9{margin-left:9px}.med-pagination .ml20{margin-left:20px}
+.med-pagination .prev span,.med-pagination .prev-disabled span,.med-pagination .next span,.med-pagination .next-disabled span{position:relative;width:5px;height:10px;display:inline;float:left;margin-top:2px;overflow:hidden;zoom:1}
+.med-pagination .prev span,.med-pagination .prev-disabled span{margin-right:5px;_margin-right:2px;_margin-top:0}
+.med-pagination .next span,.med-pagination .next-disabled span{margin-left:5px;_margin-left:2px;float:right;_margin-top:0}
+.med-pagination a .prev_s,.med-pagination a .prev_s2,.med-pagination a .next_s,.med-pagination a .next_s2{height:0;line-height:0;position:absolute;border-bottom:5px dashed transparent;border-top:5px dashed transparent}
+.med-pagination a .next_s{border-left:5px solid #6a9dcc}
+.med-pagination a .next_s2{border-left:5px solid #fff;left:-3px}
+.med-pagination a .prev_s{border-right:5px solid #6a9dcc}
+.med-pagination a .prev_s2{border-right:5px solid #fff;left:3px}
+.med-pagination .simple{width:9px}
+.med-pagination .prev-disabled .prev_s{border-right:5px solid #D4D4D4}
+.med-pagination .next-disabled .next_s{border-left:5px solid #D4D4D4}

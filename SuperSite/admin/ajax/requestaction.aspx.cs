@@ -20,25 +20,99 @@ namespace SuperSite.admin.ajax
 
             switch (base.MapServerAction)
             {
+                #region System
                 case "Login":
                     Login();
                     break;
                 case "AnswerQuesion":
                     AnswerQuesion();
                     break;
+                case "GetLoginRecord":
+                    GetLoginRecord();
+                    break;
                 case "LanguageSet":
                     LanguageSet();
                     break;
+                case "ClearSystemCache":
+                    ClearSystemCache();
+                    break;
+
+                case "UploadWebImg":
+                    UploadWebImg();
+                    break;
+
                 case "GetNoticeType":
                     GetNoticeType();
                     break;
                 case "AddNoticeType":
                     AddNoticeType();
                     break;
-                    
+                #endregion
 
-                #region
+                #region SysUsers
+                case "AddSysUser":
+                    AddSysUser();
+                    break;
+                case "UpdateSysUser":
+                    UpdateSysUser();
+                    break;
+                case "SetSysUserPwd":
+                    SetSysUserPwd();
+                    break;
+                case "GetSysUsers":
+                    GetSysUsers();
+                    break;
+                case "DeleteSysUser":
+                    DeleteSysUser();
+                    break;
+                #endregion
 
+                #region Setting
+                case "SaveSystemSetting":
+                    SaveSystemSetting();
+                    break;
+                case "SaveSiteSetting":
+                    SaveSiteSetting();
+                    break;
+                #endregion
+
+                #region Category
+
+                case "PreviewCategory":
+                    PreviewCategory();
+                    break;
+                case "GetCategory":
+                    GetCategory();
+                    break;
+                case "SetCategoryStatus":
+                    SetCategoryStatus();
+                    break;
+                case "SaveCategoryPage":
+                    SaveCategoryPage();
+                    break;
+                case "AddCategory":
+                    AddCategory();
+                    break;
+                case "UpdateCategory":
+                    UpdateCategory();
+                    break;
+                case "DeleteCategory":
+                    DeleteCategory();
+                    break;
+
+                #endregion
+
+                #region Template
+
+                #endregion
+
+                #region ProgramInfo
+                case "SaveSuperProgramInfo":
+                    SaveSuperProgramInfo();
+                    break;
+                case "GetSuperProgramInfo":
+                    GetSuperProgramInfo();
+                    break;
                 #endregion
 
                 //...
@@ -47,7 +121,7 @@ namespace SuperSite.admin.ajax
                     Outmsg(false, "请求错误");
                     break;
             }
-        }       
+        }
 
         /// <summary>
         /// 系统预设的登录口令问题

@@ -34,6 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -45,15 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BufHelp.cs" />
     <Compile Include="CacheUtil.cs" />
+    <Compile Include="Class2Map.cs" />
     <Compile Include="CookiesHelp.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="EnumUtils.cs" />
     <Compile Include="Extend.cs" />
     <Compile Include="HttpUtils.cs" />
+    <Compile Include="IPHelp.cs" />
     <Compile Include="JsonUtils.cs" />
     <Compile Include="LanguageUtil.cs" />
     <Compile Include="LogHelp.cs" />
+    <Compile Include="Mapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionMapr.cs" />
     <Compile Include="SimilarPhoto.cs" />

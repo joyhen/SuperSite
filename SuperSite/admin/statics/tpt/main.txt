@@ -1,0 +1,50 @@
+﻿<script id="tptserve" type="x-tmpl-mustache">
+    {{#data}}
+    <table cellpadding="0" cellspacing="1" class="stat_table">
+        <tr class="mouse">
+            <td class="t" width="120">程序名称</td>
+            <td colspan='2'>{{name}}</td>
+        </tr>
+        <tr class="mouse">
+            <td class="t">系统版本</td>
+            <td colspan='2'>{{version}} <font style="color:#390; padding-left:15px;">已是最新版本</font></td>
+        </tr>
+        <tr class="mouse">
+            <td class="t">操作系统</td>
+            <td colspan='2'>{{system}}</td>
+        </tr>
+        <tr class="mouse">
+            <td class="t">Asp.Net | SqlServer</td>
+            <td>{{aspNet}}</td>
+            <td>{{sqlServer}}</td>
+        </tr>
+        <tr class="mouse">
+            <td class="t">开发成员</td>
+            <td colspan='2'>
+                {{author}} <a target="_blank" style="vertical-align: -webkit-baseline-middle;" href="http://wpa.qq.com/msgrd?v=3&uin=573741776&site=qq&menu=yes">
+                    <img border="0" style="vertical-align: text-bottom;" src="http://wpa.qq.com/pa?p=2:573741776:51" alt="点击这里给我发消息" title="点击这里给我发消息" />
+                </a>
+            </td>
+        </tr>
+        <tr class="mouse">
+            <td class="t">在线升级</td>
+            <td colspan='2'>
+                <span id="oltest_cms" style="padding:0px; font-size:100%; color:#390;"><a id="updatenow">检测更新</a></span>
+            </td>
+        </tr>
+    </table>
+    {{/data}}
+</script>
+
+<script id="tptlogin" type="x-tmpl-mustache">
+    {{#data}}
+    <li style="border:1px dashed #B83B3B;">
+        <h4 style="color:#B83B3B; text-align:right; padding-right:5px;">&nbsp;</h4>
+        <div style="padding-left:30px;">
+            <p>Location: {{location}}</p>
+            <p>IP:  {{loginIp}}</p>
+            <p>Time: {{loginTime}}</p>
+        </div>
+    </li>
+    {{/data}}
+</script>
